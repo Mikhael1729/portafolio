@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class PointCard extends StatelessWidget {
+class ClassTopicCard extends StatelessWidget {
   final String title;
   final String content;
   final String imageUrl;
 
-  PointCard({this.title, this.content, this.imageUrl});
+  ClassTopicCard({this.title, this.content, this.imageUrl});
 
   @override
   Widget build(BuildContext context) => Card(

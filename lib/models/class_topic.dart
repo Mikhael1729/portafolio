@@ -1,28 +1,28 @@
-class Point {
+class ClassTopic {
   String title;
   String content;
   String imageUrl;
 
-  Point({this.title, this.content, this.imageUrl});
+  ClassTopic({this.title, this.content, this.imageUrl});
 }
 
 final points = [
-  Point(
+  ClassTopic(
     title: "Sistemas de numeración",
     content: "Los sistemas de numeración son herramientas matemáticas usadadas para representar las cantidades de una manera abstracta",
     imageUrl: "lib/images/image_two.jpg"
   ),
-  Point(
+  ClassTopic(
     title: "Conversiones",
     content: "Existen conversiones las cuales sirven para pasar números en un determinado sistema de numeración a otro.",
     imageUrl: "lib/images/image_one.jpg"
   ),
-  Point(
+  ClassTopic(
     title: "Conversiones",
     content: "Existen conversiones las cuales sirven para pasar números en un determinado sistema de numeración a otro.",
     imageUrl: "lib/images/image_two.jpg"
   ),
-  Point(
+  ClassTopic(
     title: "Sistemas de numeración",
     content: "Los sistemas de numeración son herramientas matemáticas usadadas para representar las cantidades de una manera abstracta",
     imageUrl: "lib/images/image_one.jpg"

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:portafolio/components/point_card.dart';
-import 'package:portafolio/models/point.dart';
+import 'package:portafolio/components/class_topic_card.dart';
+import 'package:portafolio/models/class_topic.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class HomePage extends StatefulWidget {
@@ -23,7 +23,7 @@ class _HomePageState extends State<HomePage> {
         mainAxisSpacing: 4.0,
         crossAxisSpacing: 4.0,
         itemBuilder: (context, index) => 
-          PointCard(
+          ClassTopicCard(
             title: points[index].title,
             content: points[index].content,
             imageUrl: points[index].imageUrl,
