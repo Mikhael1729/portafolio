@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portafolio/components/point_card.dart';
 import 'package:portafolio/models/point.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key, this.title}) : super(key: key);
@@ -13,22 +14,19 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   @override
-  Widget build(BuildContext context) => 
-    Scaffold(
+  Widget build(BuildContext context) => Scaffold(
       appBar: AppBar(title: Text(widget.title)),
-      body: GridView.builder(
-        
+      body: StaggeredGridView.countBuilder(
+        crossAxisCount: 4,
         itemCount: points.length,
+        staggeredTileBuilder: (index) => StaggeredTile.fit(2),
+        mainAxisSpacing: 4.0,
+        crossAxisSpacing: 4.0,
         itemBuilder: (context, index) => 
           PointCard(
             title: points[index].title,
             content: points[index].content,
             imageUrl: points[index].imageUrl,
           ),
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          childAspectRatio: MediaQuery.of(context).size.width / (MediaQuery.of(context).size.width / 0.5)
-        ),
-      )
-    );
+      ));
 }
