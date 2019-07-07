@@ -8,7 +8,14 @@ class PortafolioApp extends StatelessWidget {
   Widget build(BuildContext context) =>
     MaterialApp(
       title: 'Portafolio',
-      theme: ThemeData.dark(),
+      theme: _computeThemeData(),
       home: HomePage(title: 'Portafolio'),
     );
+
+  _computeThemeData() => ThemeData.dark().copyWith(
+    accentColor: Colors.white,
+    backgroundColor: Color(0xFF0F111A),
+    scaffoldBackgroundColor: Color(0xFF0F111A),
+    cardTheme: CardTheme(color: Color(0xFF1E2333))
+  );
 }
