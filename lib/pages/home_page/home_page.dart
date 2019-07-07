@@ -18,22 +18,15 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) => Scaffold(
       appBar: AppBar(title: Text(widget.title)),
-      drawer: DrawerApp(items: [
-        DrawerItem(text: "Clases", icon: Icons.people),
-        DrawerItem(text: "Sistemas de numeración", icon: Icons.assessment),
-        Divider(color: Colors.grey, height: 1),
-        DrawerItem(text: "Ajustes", icon: Icons.settings)
-      ]),
-      body: StaggeredGridView.countBuilder(
-        crossAxisCount: 4,
-        itemCount: points.length,
-        staggeredTileBuilder: (index) => StaggeredTile.fit(2),
-        mainAxisSpacing: 4.0,
-        crossAxisSpacing: 4.0,
-        itemBuilder: (context, index) => ClassTopicCard(
-              title: points[index].title,
-              content: points[index].content,
-              imageUrl: points[index].imageUrl,
-            ),
+      body: Center(
+        child: Container(
+          width: 380,
+          height: 500,
+          child: ClassTopicCard(
+            content: points[0].content,
+            imageUrl: points[0].imageUrl,
+            title: points[0].title,
+          ),
+        ),
       ));
 }

@@ -8,9 +8,7 @@ class PortafolioApp extends StatelessWidget {
   Widget build(BuildContext context) =>
     MaterialApp(
       title: 'Portafolio',
-      theme: ThemeData(primarySwatch: Colors.blue),
+      theme: ThemeData.dark(),
       home: HomePage(title: 'Portafolio'),
     );
 }
-
-
