@@ -27,29 +27,45 @@ class _HomePageState extends State<HomePage> {
                 icon: Icon(Icons.assignment), title: Text("Planteamientos"))
           ]),
       body: Container(
-          child: Padding(
-        padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            MyFadeTransition(
-              child: Text(
-                "Clases",
-                style: TextStyle(
-                  fontSize: 42,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              // Page title.
+              Padding(
+                padding: EdgeInsets.fromLTRB(20, 50, 20, 0),
+                child: MyFadeTransition(
+                  child: Text(
+                    "Clases",
+                    style: TextStyle(
+                      fontSize: 42,
+                    ),
+                  ),
                 ),
               ),
-            ),
-            Container(height: 40),
-            Center(
-              child: ClassTopicCard(
-                content: points[0].content,
-                imageUrl: points[0].imageUrl,
-                title: points[0].title,
+
+
+              // Class list.
+              Expanded(
+                child: Center(
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(maxHeight: 400),
+                    child: ListView.separated(
+                      shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
+                      itemCount: points.length,
+                      itemBuilder: (context, index) => _buildCard(points[index]),
+                      separatorBuilder: (context, index) => Container(width: 15,)
+                    ),
+                  ),
+                ),
               ),
-            ),
-          ],
-        ),
-      )));
+            ],
+          )));
+
+  Widget _buildCard(ClassTopic topic) =>
+    ClassTopicCard(
+      content: topic.content,
+      imageUrl: topic.imageUrl,
+      title: topic.title,
+    );
 }
