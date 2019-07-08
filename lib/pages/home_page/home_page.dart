@@ -32,11 +32,17 @@ class _HomePageState extends State<HomePage> {
           )
         ]
       ),
-      body: Center(
-        child: ClassTopicCard(
-          content: points[0].content,
-          imageUrl: points[0].imageUrl,
-          title: points[0].title,
-        ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Center(
+            child: ClassTopicCard(
+              content: points[0].content,
+              imageUrl: points[0].imageUrl,
+              title: points[0].title,
+            ),
+          ),
+        ],
       ));
 }
