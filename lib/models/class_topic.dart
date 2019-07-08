@@ -9,7 +9,7 @@ class ClassTopic {
 final points = [
   ClassTopic(
     title: "Sistemas de numeración",
-    content: "Los sistemas de numeración son herramientas matemáticas usadadas para representar las cantidades de una manera abstracta",
+    content: "Los sistemas de numeración son herramientas matemáticas usadadas para representar las cantidades de una manera abstracta Los sistemas de numeración son herramientas matemáticas usadadas para representar las cantidades de una manera abstracta",
     imageUrl: "lib/images/image_two.jpg"
   ),
   ClassTopic(
