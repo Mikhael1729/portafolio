@@ -33,14 +33,10 @@ class _HomePageState extends State<HomePage> {
         ]
       ),
       body: Center(
-        child: Container(
-          width: 380,
-          height: 500,
-          child: ClassTopicCard(
-            content: points[0].content,
-            imageUrl: points[0].imageUrl,
-            title: points[0].title,
-          ),
+        child: ClassTopicCard(
+          content: points[0].content,
+          imageUrl: points[0].imageUrl,
+          title: points[0].title,
         ),
       ));
 }
