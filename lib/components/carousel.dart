@@ -15,28 +15,54 @@ class Carousel<T> extends StatefulWidget {
 
 class _CarouselState extends State<Carousel> {
   PageController _controller;
-  int _currentPage;
+  int _currentPage = 0;
 
   @override
   void initState() { 
     super.initState();
-    _currentPage = 1;
     _controller = PageController(
       initialPage: _currentPage,
-      keepPage: true,
+      keepPage: false,
       viewportFraction: 0.5,
     );
   }
 
-  @override
-  Widget build(BuildContext context) => 
-    PageView(
-      controller: _controller,
-      onPageChanged: _onPageChanged,
-      children: widget.items.map(widget.buildItem).toList(),
+  Widget _buildAnimation (BuildContext context, Widget child, int index) {
+    double value = 1;
+
+    if (_controller.position.haveDimensions) {
+      value = _controller.page - index;
+      value = (1 - (value.abs() * 0.5)).clamp(0.0, 1.0);
+    }
+
+    return Center(
+      child: SizedBox(
+        width: Curves.easeOut.transform(value) * 400, // Width before focus.
+        height: Curves.easeOut.transform(value) * 500, // Height before focus.
+        child: child,
+      ),
+    );
+  }
+
+  Widget _buildAnimatedItem(BuildContext context, int index) => 
+    AnimatedBuilder(
+      animation: _controller,
+      builder: (c, w) => _buildAnimation(c, w, index),
+      child: Container(
+        margin: EdgeInsets.fromLTRB(index == 0 ? 0 : 10, 0, 10, 0),
+        child: widget.buildItem(widget.items[index]),
+      ),
     );
 
   void _onPageChanged(int newPage) => setState(() {
     _currentPage = newPage;
   });
+
+  @override
+  Widget build(BuildContext context) => 
+    PageView.builder(
+      controller: _controller,
+      onPageChanged: _onPageChanged,
+      itemBuilder: _buildAnimatedItem,
+    );
 }
