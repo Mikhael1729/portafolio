@@ -3,17 +3,27 @@ import 'package:portafolio/components/carousel.dart';
 import 'package:portafolio/components/my_fade_transition.dart';
 import 'package:portafolio/models/class_topic.dart';
 import 'class_topic_card/class_topic_card.dart';
+import 'class_topic_page/class_topic_page.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({Key key, this.title}) : super(key: key);
 
   final String title;
 
-  Widget _buildCard(dynamic topic) => ClassTopicCard(
-        content: topic.content,
-        imageUrl: topic.imageUrl,
-        title: topic.title,
-      );
+  Widget Function(dynamic) _building(BuildContext context) =>
+     (dynamic topic) => ClassTopicCard(
+            onTap: () => _onTap(context),
+            content: topic.content,
+            imageUrl: topic.imageUrl,
+            title: topic.title,
+          );
+
+  void _onTap(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => ClassTopicPage()),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -78,7 +88,7 @@ class HomePage extends StatelessWidget {
         // Class list.
         Expanded(
           child: Center(
-            child: Carousel(items: points, buildItem: _buildCard),
+            child: Carousel(items: points, buildItem: _building(context)),
           ),
         ),
       ],
