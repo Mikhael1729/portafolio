@@ -13,23 +13,38 @@ class Layout extends StatelessWidget {
       appBar: EmptyAppBar(),
       body: HomePage(title: "Home Page"),
       resizeToAvoidBottomInset: false,
-      bottomNavigationBar: BottomNavigationBar(
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(boxShadow: [
+          BoxShadow(
+            color: Color(0xFF000000),
+            blurRadius: 8, // has the effect of softening the shadow
+            spreadRadius: 8, // has the effect of extending the shadow
+            offset: Offset(
+              10.0, // horizontal, move right 10
+              10.0, // vertical, move down 10
+            ),
+          ),
+        ]),
+        child: BottomNavigationBar(
           currentIndex: 0,
-          backgroundColor: Color(0xFF22242D),
+          backgroundColor: Theme.of(context).backgroundColor,
           items: [
             _barItem("Clases", Icons.class_),
             _barItem("Herramientas", Icons.data_usage),
             _barItem("Planteamientos", Icons.assignment),
-          ]),
+          ],
+        ),
+      ),
     );
   }
 }
 
-class EmptyAppBar  extends StatelessWidget implements PreferredSizeWidget {
+class EmptyAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return Container();
   }
+
   @override
-  Size get preferredSize => Size(0.0,0.0);
+  Size get preferredSize => Size(0.0, 0.0);
 }
