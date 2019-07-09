@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:portafolio/pages/home_page/home_page.dart';
 
+import 'layouts/layout.dart';
+
 void main() => runApp(PortafolioApp());
 
 class PortafolioApp extends StatelessWidget {
@@ -9,7 +11,7 @@ class PortafolioApp extends StatelessWidget {
     MaterialApp(
       title: 'Portafolio',
       theme: _computeThemeData(),
-      home: HomePage(title: 'Portafolio'),
+      home: Layout(),
     );
 
   _computeThemeData() => ThemeData.dark().copyWith(
