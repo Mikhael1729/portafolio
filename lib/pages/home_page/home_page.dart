@@ -58,10 +58,7 @@ class _HomePageState extends State<HomePage> {
               // Class list.
               Expanded(
                 child: Center(
-                  child: ConstrainedBox(
-                    constraints: BoxConstraints(maxHeight: 400),
-                    child: Carousel(items: points, buildItem: _buildCard),
-                  ),
+                  child: Carousel(items: points, buildItem: _buildCard),
                 ),
               ),
             ],

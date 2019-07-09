@@ -8,12 +8,14 @@ class ClassTopicCard extends StatelessWidget {
   ClassTopicCard({this.title, this.content, this.imageUrl});
 
   @override
-  Widget build(BuildContext context) => Container(
-      width: 280,
-      decoration: BoxDecoration(
-          border: Border.all(color: Colors.grey),
-          borderRadius: BorderRadius.circular(25)),
-      child: Card(
+  Widget build(BuildContext context) => 
+    ConstrainedBox(
+      constraints: BoxConstraints(maxWidth: 400),
+      child: Container(
+        decoration: BoxDecoration(
+            border: Border.all(color: Colors.grey),
+            borderRadius: BorderRadius.circular(25)),
+        child: Card(
         margin: EdgeInsets.all(0),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
         child: Column(
@@ -59,5 +61,6 @@ class ClassTopicCard extends StatelessWidget {
             ),
           ],
         ),
-      ));
+      )),
+    );
 }

@@ -23,7 +23,7 @@ class _CarouselState extends State<Carousel> {
     _controller = PageController(
       initialPage: _currentPage,
       keepPage: false,
-      viewportFraction: 0.5,
+      viewportFraction: 0.8,
     );
   }
 
@@ -32,13 +32,12 @@ class _CarouselState extends State<Carousel> {
 
     if (_controller.position.haveDimensions) {
       value = _controller.page - index;
-      value = (1 - (value.abs() * 0.5)).clamp(0.0, 1.0);
+      value = (1 - (value.abs() * 0.3)).clamp(0.0, 1.0);
     }
 
     return Center(
       child: SizedBox(
-        width: Curves.easeOut.transform(value) * 400, // Width before focus.
-        height: Curves.easeOut.transform(value) * 500, // Height before focus.
+        height: Curves.easeOut.transform(value) * 400, // Height before focus.
         child: child,
       ),
     );
@@ -49,7 +48,7 @@ class _CarouselState extends State<Carousel> {
       animation: _controller,
       builder: (c, w) => _buildAnimation(c, w, index),
       child: Container(
-        margin: EdgeInsets.fromLTRB(index == 0 ? 0 : 10, 0, 10, 0),
+        margin: EdgeInsets.fromLTRB(index == 0 ? 0 : 5, 0, 5, 0),
         child: widget.buildItem(widget.items[index]),
       ),
     );
