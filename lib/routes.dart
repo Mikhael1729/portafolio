@@ -5,5 +5,5 @@ import 'layouts/normal_page.dart';
 
 final routes = {
   '/': (context) => Layout(pages: pages),
-  ClassTopicPage.routeName: (context) => NormalPage(ClassTopicPage(), "Hello"),
+  ClassTopicPage.routeName: (context) => ClassTopicPage(),
 };
