@@ -20,6 +20,6 @@ final pages = <LayoutPage> [
   ),
   LayoutPage(
     barItem: _barItem("Herramientas", Icons.radio_button_checked),
-    page: Container(color: Colors.blue),
+    page: Container(color: Colors.red),
   ),
 ];
