@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portafolio/pages.dart';
 import 'layouts/layout.dart';
 
 void main() => runApp(PortafolioApp());
@@ -8,7 +9,7 @@ class PortafolioApp extends StatelessWidget {
   Widget build(BuildContext context) => MaterialApp(
         title: 'Portafolio',
         theme: _computeThemeData(),
-        home: Layout(),
+        home: Layout(pages: pages),
       );
 
   _computeThemeData() => ThemeData.dark().copyWith(
