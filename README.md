@@ -21,4 +21,5 @@ samples, guidance on mobile development, and a full API reference.
   - Split between two diferent types of views: List and Cards.
   - Use Transform() to lateral cards.
   - Fix the problem with cards that up when TextFiel is focused.
+  - Escalar los cards dependiendo del tamaño de pantalla con MediaQuery y Transform.
 2. Pagination: Travel around the three different pages.
