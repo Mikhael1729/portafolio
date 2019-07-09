@@ -55,11 +55,12 @@ class _CarouselState extends State<Carousel> {
 
   void _onPageChanged(int newPage) => setState(() {
     _currentPage = newPage;
-  });
+      });
 
   @override
   Widget build(BuildContext context) => 
     PageView.builder(
+      itemCount: widget.items.length,
       controller: _controller,
       onPageChanged: _onPageChanged,
       itemBuilder: _buildAnimatedItem,
