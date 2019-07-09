@@ -6,8 +6,10 @@ class ClassTopic {
   final String title;
   final String content;
   final String coverImage;
-  final List<Resource> resources; // Videos, images or links of the teacher class.
-  final List<Resource> attachments; // Your homeworks and other related things (your links)
+  final List<Resource>
+      resources; // Videos, images or links of the teacher class.
+  final List<Resource>
+      attachments; // Your homeworks and other related things (your links)
 
   ClassTopic({
     @required this.id,
@@ -46,6 +48,6 @@ final points = [
     title: "Sistemas de numeración",
     content:
         "Los sistemas de numeración son herramientas matemáticas usadadas para representar las cantidades de una manera abstracta",
-    coverImage: "lib/images/image_one.jpg",
+     coverImage: "lib/images/image_one.jpg",
   ),
 ];
