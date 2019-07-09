@@ -19,10 +19,7 @@ class HomePage extends StatelessWidget {
           );
 
   void _onTap(BuildContext context) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => ClassTopicPage()),
-    );
+    Navigator.pushNamed(context, '/class-topic');
   }
 
   @override
