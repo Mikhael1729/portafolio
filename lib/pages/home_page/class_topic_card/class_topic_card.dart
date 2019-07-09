@@ -6,7 +6,12 @@ class ClassTopicCard extends StatelessWidget {
   final String imageUrl;
   final void Function() onTap;
 
-  ClassTopicCard({this.title, this.content, this.imageUrl, this.onTap,});
+  ClassTopicCard({
+    this.title,
+    this.content,
+    this.imageUrl,
+    this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -27,31 +32,39 @@ class ClassTopicCard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                // Class number.
-                Padding(
-                  padding: EdgeInsets.fromLTRB(24, 24, 24, 5),
-                  child: Text("Clase 1"),
-                ),
-                // Title.
-                Padding(
-                  padding: EdgeInsets.fromLTRB(24, 0, 24, 24),
-                  child: Text(
-                    this.title,
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
+                Stack(
+                  alignment: Alignment.bottomCenter,
+                  children: <Widget>[
+                    // Image
+                    Image(
+                      image: AssetImage(imageUrl),
+                      fit: BoxFit.cover,
                     ),
-                  ),
+
+                    Container(
+                      width: double.infinity,
+                      color: Color(0x90000000),
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(24, 10, 24, 10),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text("Clase 1"),
+                            // Title.
+                            Text(
+                              this.title,
+                              style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    )
+                  ],
                 ),
-                // Image
-                ConstrainedBox(
-                  constraints:
-                      BoxConstraints(minWidth: double.infinity, maxHeight: 170),
-                  child: Image(
-                    image: AssetImage(imageUrl),
-                    fit: BoxFit.cover,
-                  ),
-                ),
+
                 // Content
                 Flexible(
                   child: Padding(
