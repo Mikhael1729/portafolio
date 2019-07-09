@@ -21,27 +21,49 @@ class HomePage extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         // Page title.
-        Container(
-          color: Colors.blue,
-          child: Padding(
-            padding: EdgeInsets.fromLTRB(20, 25, 20, 25),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                MyFadeTransition(
-                  child: Text(
-                    "Clases",
-                    style: TextStyle(
-                      fontSize: 42,
-                    ),
+        Padding(
+          padding: EdgeInsets.fromLTRB(20, 25, 20, 25),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              MyFadeTransition(
+                child: Text(
+                  "Clases",
+                  style: TextStyle(
+                    fontSize: 36,
                   ),
                 ),
-                FloatingActionButton(
-                  onPressed: () {},
+              ),
+              Container(
+                width: 40,
+                height: 40,
+                child: FloatingActionButton(
                   child: Icon(Icons.list, color: Colors.white),
                   backgroundColor: Color(0xFF1D2030),
+                  onPressed: () {},
                 ),
-              ],
+              ),
+            ],
+          ),
+        ),
+
+        Padding(
+          padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+          child: TextField(
+            decoration: InputDecoration(
+              filled: true,
+              hintStyle: new TextStyle(color: Colors.grey[800]),
+              hintText: "Type in your text",
+              fillColor: Colors.transparent,
+              contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+              prefixIcon: Icon(Icons.search),
+              border: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.blueAccent, width: 32.0),
+                  borderRadius: BorderRadius.circular(25.0)),
+              focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Color(0xFF1D2030), width: 32.0),
+                  borderRadius: BorderRadius.circular(25.0)),
             ),
           ),
         ),
