@@ -4,47 +4,31 @@ import 'package:portafolio/components/class_topic_card.dart';
 import 'package:portafolio/components/my_fade_transition.dart';
 import 'package:portafolio/models/class_topic.dart';
 
-class HomePage extends StatefulWidget {
+class HomePage extends StatelessWidget {
   HomePage({Key key, this.title}) : super(key: key);
 
   final String title;
 
+  Widget _buildCard(dynamic topic) => ClassTopicCard(
+        content: topic.content,
+        imageUrl: topic.imageUrl,
+        title: topic.title,
+      );
+
   @override
-  _HomePageState createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-
-  Widget _buildCard(dynamic topic) =>
-    ClassTopicCard(
-      content: topic.content,
-      imageUrl: topic.imageUrl,
-      title: topic.title, 
-    );
-
-   BottomNavigationBarItem _barItem(String text, IconData icon) =>
-    BottomNavigationBarItem(icon: Icon(Icons.class_), title: Text("Clases"));
-
-    @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 0,
-        backgroundColor: Color(0xFF22242D),
-        items: [
-          _barItem("Clases", Icons.class_),
-          _barItem("Herramientas", Icons.data_usage),
-          _barItem("Planteamientos", Icons.assignment),
-        ]),
-      body: Container(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-
-              // Page title.
-              Padding(
-                padding: EdgeInsets.fromLTRB(20, 50, 20, 0),
-                child: MyFadeTransition(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        // Page title.
+        Container(
+          color: Colors.blue,
+          child: Padding(
+            padding: EdgeInsets.fromLTRB(20, 25, 20, 25),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                MyFadeTransition(
                   child: Text(
                     "Clases",
                     style: TextStyle(
@@ -52,16 +36,23 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 ),
-              ),
-
-
-              // Class list.
-              Expanded(
-                child: Center(
-                  child: Carousel(items: points, buildItem: _buildCard),
+                FloatingActionButton(
+                  onPressed: () {},
+                  child: Icon(Icons.list, color: Colors.white),
+                  backgroundColor: Color(0xFF1D2030),
                 ),
-              ),
-            ],
-          )));
+              ],
+            ),
+          ),
+        ),
+
+        // Class list.
+        Expanded(
+          child: Center(
+            child: Carousel(items: points, buildItem: _buildCard),
+          ),
+        ),
+      ],
+    );
   }
 }
