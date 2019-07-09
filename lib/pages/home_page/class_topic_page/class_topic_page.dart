@@ -58,7 +58,7 @@ class ClassTopicPage extends StatelessWidget {
               constraints:
                   BoxConstraints(minWidth: double.infinity, maxHeight: 170),
               child: Image(
-                image: AssetImage(args.imageUrl),
+                image: AssetImage(args.coverImage),
                 fit: BoxFit.cover,
               ),
             ),

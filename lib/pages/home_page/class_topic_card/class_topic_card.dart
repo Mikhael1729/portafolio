@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:portafolio/pages/home_page/class_topic_page/class_topic_page.dart';
 
 class ClassTopicCard extends StatelessWidget {
   final String title;

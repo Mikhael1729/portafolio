@@ -14,7 +14,7 @@ class HomePage extends StatelessWidget {
       (dynamic topic) => ClassTopicCard(
             onTap: () => _onTap(context),
             content: topic.content,
-            imageUrl: topic.imageUrl,
+            imageUrl: topic.coverImage,
             title: topic.title,
           );
 
