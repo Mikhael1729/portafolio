@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:portafolio/pages/home_page/drawer_item.dart';
 
 class DrawerApp extends StatelessWidget {
   final List<Widget> items;

@@ -57,13 +57,20 @@ class HomePage extends StatelessWidget {
               hintText: "Type in your text",
               fillColor: Colors.transparent,
               contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-              prefixIcon: Icon(Icons.search),
-              border: OutlineInputBorder(
-                  borderSide: BorderSide(color: Color(0xFF1D2030), width: 32.0),
+              prefixIcon: Icon(Icons.search, color: Colors.grey),
+              enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(0xFF1D2030),
+                    width: 32.0,
+                  ),
                   borderRadius: BorderRadius.circular(25.0)),
               focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Color(0xFF1D2030), width: 32.0),
-                  borderRadius: BorderRadius.circular(25.0)),
+                borderSide: BorderSide(
+                  color: Color(0xFF1D2030),
+                  width: 32.0,
+                ),
+                borderRadius: BorderRadius.circular(25.0),
+              ),
             ),
           ),
         ),

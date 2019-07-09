@@ -12,6 +12,7 @@ class Layout extends StatelessWidget {
     return Scaffold(
       appBar: EmptyAppBar(),
       body: HomePage(title: "Home Page"),
+      resizeToAvoidBottomInset: false,
       bottomNavigationBar: BottomNavigationBar(
           currentIndex: 0,
           backgroundColor: Color(0xFF22242D),
