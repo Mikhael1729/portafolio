@@ -14,3 +14,11 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our 
 [online documentation](https://flutter.dev/docs), which offers tutorials, 
 samples, guidance on mobile development, and a full API reference.
+
+## Elements to add
+
+1. HomeScreen:
+  - Split between two diferent types of views: List and Cards.
+  - Use Transform() to lateral cards.
+  - Fix the problem with cards that up when TextFiel is focused.
+2. Pagination: Travel around the three different pages.
