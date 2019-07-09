@@ -11,7 +11,7 @@ class HomePage extends StatelessWidget {
   final String title;
 
   Widget Function(dynamic) _building(BuildContext context) =>
-     (dynamic topic) => ClassTopicCard(
+      (dynamic topic) => ClassTopicCard(
             onTap: () => _onTap(context),
             content: topic.content,
             imageUrl: topic.imageUrl,
@@ -19,7 +19,11 @@ class HomePage extends StatelessWidget {
           );
 
   void _onTap(BuildContext context) {
-    Navigator.pushNamed(context, '/class-topic');
+    Navigator.pushNamed(
+      context,
+      ClassTopicPage.routeName,
+      arguments: points[0],
+    );
   }
 
   @override
