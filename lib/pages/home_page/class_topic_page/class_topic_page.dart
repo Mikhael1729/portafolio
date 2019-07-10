@@ -125,17 +125,24 @@ class ClassTopicPage extends StatelessWidget {
                     for (var url in args.urls)
                       Padding(
                         padding: EdgeInsets.fromLTRB(24, 0, 24, 0),
-                        child: Text(
-                          "- ${url.title}",
-                          style: TextStyle(
-                            fontSize: 16,
+                        child: FlatButton.icon(
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.link,
                             color: Colors.blue,
+                          ),
+                          label: Text(
+                            url.title,
+                            style: TextStyle(
+                              color: Colors.blue,
+                            ),
                           ),
                         ),
                       ),
 
+             
                     Divider(color: Colors.transparent),
- 
+
                     _subtitle("Evidencias"),
 
                     Divider(color: Colors.transparent),
