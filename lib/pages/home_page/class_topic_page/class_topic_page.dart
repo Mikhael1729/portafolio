@@ -2,100 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:portafolio/components/empty_app_bar/empty_app_bar.dart';
 import 'package:portafolio/components/header_image/header_image.dart';
 import 'package:portafolio/components/my_fade_transition.dart';
-import 'package:portafolio/models/resource.dart';
 import 'package:portafolio/models/class_topic.dart';
-import 'package:portafolio/models/resource_type.dart';
-import 'package:portafolio/pages/home_page/class_topic_page/image_resource/image_resource.dart';
-import 'package:portafolio/pages/home_page/class_topic_page/video_resource/video_resource.dart';
+import 'package:portafolio/pages/home_page/resource_list/resource_list.dart';
 
 class ClassTopicPage extends StatelessWidget {
-  static const routeName = '/class-topic';
-
   ClassTopicPage({Key key}) : super(key: key);
 
-  // Build separator.
-  Widget _buildSeparator(BuildContext context, int index) =>
-      Container(width: 10);
-
-  // Build resource.
-  Widget Function(BuildContext, int) _buildResource(List<Resource> resources) =>
-      (context, index) {
-        final resource = resources[index];
-
-        if (resource.type == ResourceType.localImage)
-          return ImageResource(
-            children: <Widget>[
-              if (resource.name != null) Text(resource.name),
-              if (resource.description != null) Text(resource.description),
-            ],
-            imageUrl: "lib/images/image_two.jpg",
-          );
-        else if (resource.type == ResourceType.externalVideo)
-          return VideoResource(
-            child: Center(
-              child: Text(
-                resource.name,
-                textAlign: TextAlign.center,
-              ),
-            ),
-            width: 150,
-            videoUrl: resource.url,
-          );
-        else
-          return Container(width: 0, height: 0);
-      };
-
-  // Build attachment.
-  Widget _buildAttachment(BuildContext context, int index) => Container(
-        height: 200,
-        child: Image(
-          image: AssetImage('lib/images/image_two.jpg'),
-        ),
-      );
-
-  Widget _buildResources({
-    @required String title,
-    double itemHeight = 200,
-    @required List<Resource> resources,
-    @required
-        Widget Function(BuildContext, int) Function(List<Resource>) itemBuilder,
-    @required Widget Function(BuildContext, int) separatorBuilder,
-  }) =>
-      // Resources.
-      Expanded(
-        child: Padding(
-          padding: EdgeInsets.fromLTRB(24, 0, 24, 0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget>[
-              // Resources (title)
-              Text(
-                title,
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-
-              Divider(color: Colors.transparent),
-
-              // Resources (horizontal list).
-              Expanded(
-                child: Container(
-                  height: itemHeight,
-                  child: ListView.separated(
-                    itemCount: resources.length,
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: itemBuilder(resources),
-                    separatorBuilder: separatorBuilder,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-      );
+  static const routeName = '/class-topic';
 
   @override
   Widget build(BuildContext context) {
@@ -118,12 +31,15 @@ class ClassTopicPage extends StatelessWidget {
                     Stack(
                       alignment: Alignment.topLeft,
                       children: <Widget>[
+                        // Header image.
                         HeaderImage(
                           primaryText: args.title,
                           secondaryText: "Clase ${args.id}",
                           imageUrl: args.coverImage,
                           lateralPadding: 20,
                         ),
+
+                        // Back button.
                         Positioned(
                           top: 0.0,
                           left: 0.0,
@@ -182,14 +98,10 @@ class ClassTopicPage extends StatelessWidget {
                     Divider(color: Colors.transparent),
 
                     // Resources.
-                    _buildResources(
+                    ResourceList(
                       title: "Recursos de clase",
-                      itemBuilder: _buildResource,
                       resources: args.resources,
-                      separatorBuilder: _buildSeparator,
                     ),
-
-                    Divider(color: Colors.transparent),
                   ],
                 ),
               ),
