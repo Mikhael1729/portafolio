@@ -25,13 +25,16 @@ class ResourceList extends StatelessWidget {
       (context, index) {
         final resource = resources[index];
 
-        if (resource.type == ResourceType.localImage)
+        if (resource.type == ResourceType.localImage ||
+            resource.type == ResourceType.externalImage)
           return ImageResource(
+            externalImage:
+                resource.type == ResourceType.localImage ? false : true,
             children: <Widget>[
               if (resource.name != null) Text(resource.name),
               if (resource.description != null) Text(resource.description),
             ],
-            imageUrl: "lib/images/image_two.jpg",
+            imageUrl: resource.url,
           );
         else if (resource.type == ResourceType.externalVideo)
           return VideoResource(
