@@ -117,7 +117,7 @@ class ClassTopicCard extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(20, 0, 24, 10),
                     child: FlatButton.icon(
-                      onPressed: () {},
+                      onPressed: onTap,
                       icon: Icon(
                         Icons.info,
                         color: Theme.of(context).accentColor,
