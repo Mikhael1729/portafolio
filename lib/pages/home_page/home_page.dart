@@ -4,10 +4,16 @@ import 'package:portafolio/models/class_topic.dart';
 import 'class_topic_card/class_topic_card.dart';
 import 'class_topic_page/class_topic_page.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  final String title;
+
   HomePage({Key key, this.title}) : super(key: key);
 
-  final String title;
+  @override
+  State<StatefulWidget> createState () => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
 
   Widget Function(dynamic) _building(BuildContext context) =>
       (dynamic topic) => ClassTopicCard(
