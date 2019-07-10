@@ -4,6 +4,7 @@ import 'package:portafolio/components/header_image/header_image.dart';
 import 'package:portafolio/components/my_fade_transition.dart';
 import 'package:portafolio/models/class_topic.dart';
 import 'package:portafolio/pages/home_page/resource_list/resource_list.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ClassTopicPage extends StatelessWidget {
   ClassTopicPage({Key key}) : super(key: key);
@@ -126,7 +127,10 @@ class ClassTopicPage extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.fromLTRB(24, 0, 24, 0),
                         child: FlatButton.icon(
-                          onPressed: () {},
+                          onPressed: () async {
+                            if(await canLaunch(url.url))
+                              await launch(url.url);
+                          },
                           icon: Icon(
                             Icons.link,
                             color: Colors.blue,
