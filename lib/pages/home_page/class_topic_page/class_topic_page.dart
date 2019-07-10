@@ -32,6 +32,7 @@ class ClassTopicPage extends StatelessWidget {
 
           Divider(height: 20, color: Colors.transparent),
 
+          // Content.
           Padding(
             padding: EdgeInsets.fromLTRB(25, 0, 20, 0),
             child: Text(
@@ -42,6 +43,7 @@ class ClassTopicPage extends StatelessWidget {
 
           Divider(height: 20, color: Colors.transparent),
 
+          // Anexos
           Padding(
             padding: EdgeInsets.fromLTRB(25, 0, 20, 0),
             child: Text(
