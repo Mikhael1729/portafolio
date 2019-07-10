@@ -3,13 +3,15 @@ import 'package:flutter/material.dart';
 class Carousel<T> extends StatefulWidget {
   final List<T> items;
   final Widget Function(T data) buildItem;
-  final int itemsHeight;
+  final double itemsHeight;
+  final double viewPortFraction;
 
   Carousel({
     Key key,
     @required this.items,
     @required this.buildItem,
     this.itemsHeight,
+    this.viewPortFraction = 0.8,
   }) : super(key: key);
 
   _CarouselState createState() => _CarouselState();
@@ -25,7 +27,7 @@ class _CarouselState extends State<Carousel> {
     _controller = PageController(
       initialPage: _currentPage,
       keepPage: false,
-      viewportFraction: 0.8,
+      viewportFraction: widget.viewPortFraction,
     );
   }
 

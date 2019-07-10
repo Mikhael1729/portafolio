@@ -50,7 +50,7 @@ class HeaderImage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Text("Clase $secondaryText"),
+                Text(secondaryText),
                 // Title.
                 Text(
                   primaryText,
