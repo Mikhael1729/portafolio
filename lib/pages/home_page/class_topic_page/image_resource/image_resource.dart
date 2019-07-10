@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Resource extends StatelessWidget {
+class ImageResource extends StatelessWidget {
   final String imageUrl;
   final double width;
   final double height;
@@ -8,7 +8,7 @@ class Resource extends StatelessWidget {
   final Color color;
   final List<Widget> children;
 
-  const Resource({
+  const ImageResource({
     Key key,
     @required this.imageUrl,
     @required this.children,
@@ -45,6 +45,7 @@ class Resource extends StatelessWidget {
                   child: Padding(
                     padding: EdgeInsets.all(padding),
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: children,
                     ),
                   ),
