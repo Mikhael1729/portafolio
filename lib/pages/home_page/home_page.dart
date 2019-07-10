@@ -13,6 +13,7 @@ class HomePage extends StatelessWidget {
   Widget Function(dynamic) _building(BuildContext context) =>
       (dynamic topic) => ClassTopicCard(
             onTap: () => _onTap(context),
+            classNumber: topic.id,
             content: topic.content,
             imageUrl: topic.coverImage,
             title: topic.title,
@@ -88,8 +89,10 @@ class HomePage extends StatelessWidget {
 
         // Class list.
         Expanded(
-          child: Center(
-            child: Carousel(items: points, buildItem: _building(context)),
+          child: Container(
+            child: Center(
+              child: Carousel(items: points, buildItem: _building(context)),
+            ),
           ),
         ),
       ],
