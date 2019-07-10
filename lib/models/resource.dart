@@ -14,8 +14,6 @@ class Resource {
       return Icons.image;
     else if (type == ResourceType.externalVideo)
       return Icons.videocam;
-    else if (type == ResourceType.url)
-      return Icons.web;
     else 
       return Icons.attach_file;    
   }
