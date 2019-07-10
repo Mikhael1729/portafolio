@@ -23,7 +23,7 @@ class ClassTopicCard extends StatelessWidget {
     if (screenSize.height >= 720)
       return 220;
     else
-      return 190;
+      return 170;
   }
 
   @override

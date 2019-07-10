@@ -99,6 +99,14 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
+class ListViewImplementation extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return null;
+  }
+}
+
 class CarouselImplementation extends StatelessWidget {
   Widget Function(dynamic) _building(BuildContext context) =>
       (dynamic topic) => ClassTopicCard(
@@ -122,8 +130,11 @@ class CarouselImplementation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final media = MediaQuery.of(context);
+    final height = media.size.height;
+
     return Container(
-      height: 400,
+      height: height >= 720 ? 400 : 350,
       width: double.infinity,
       margin: EdgeInsets.fromLTRB(0, 20, 0, 20),
       child: Center(
