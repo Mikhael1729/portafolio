@@ -7,14 +7,12 @@ import 'package:portafolio/pages/home_page/class_topic_page/video_resource/video
 class ResourceList extends StatelessWidget {
   ResourceList({
     Key key,
-    @required this.title,
     @required this.resources,
     this.itemHeight = 200,
   }) : super(key: key);
 
   final double itemHeight;
   final List<Resource> resources;
-  final String title;
 
   // Build separator.
   Widget _buildSeparator(BuildContext context, int index) =>
@@ -60,17 +58,6 @@ class ResourceList extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            // Resources (title)
-            Text(
-              title,
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-
-            Divider(color: Colors.transparent),
-
             // Resources (horizontal list).
             Expanded(
               child: Container(

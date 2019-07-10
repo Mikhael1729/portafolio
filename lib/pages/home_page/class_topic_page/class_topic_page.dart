@@ -10,6 +10,17 @@ class ClassTopicPage extends StatelessWidget {
 
   static const routeName = '/class-topic';
 
+  Widget _subtitle(String text) => Padding(
+        padding: EdgeInsets.fromLTRB(24, 0, 24, 0),
+        child: Text(
+          text,
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      );
+
   @override
   Widget build(BuildContext context) {
     final ClassTopic args = ModalRoute.of(context).settings.arguments;
@@ -98,18 +109,40 @@ class ClassTopicPage extends StatelessWidget {
                     Divider(color: Colors.transparent),
 
                     // Resources.
-                    ResourceList(
-                      title: "Recursos de clase",
-                      resources: args.resources,
-                    ),
+                    _subtitle("Recursos de clase"),
 
                     Divider(color: Colors.transparent),
-                    
+
+                    ResourceList(resources: args.resources),
+
+                    Divider(color: Colors.transparent),
+
                     // Attachments.
-                    ResourceList(
-                      title: "Evidencias",
-                      resources: args.attachments,
-                    ),
+                    _subtitle("Enlaces"),
+
+                    Divider(color: Colors.transparent),
+
+                    for (var url in args.urls)
+                      Padding(
+                        padding: EdgeInsets.fromLTRB(24, 0, 24, 0),
+                        child: Text(
+                          "- ${url.title}",
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.blue,
+                          ),
+                        ),
+                      ),
+
+                    Divider(color: Colors.transparent),
+ 
+                    _subtitle("Evidencias"),
+
+                    Divider(color: Colors.transparent),
+
+                    ResourceList(resources: args.attachments),
+
+                    Divider(color: Colors.transparent),
                   ],
                 ),
               ),
