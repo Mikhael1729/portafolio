@@ -21,6 +21,59 @@ class ClassTopicPage extends StatelessWidget {
         ),
       );
 
+  // Build attachment.
+  Widget _buildAttachment(BuildContext context, int index) => Container(
+        height: 200,
+        child: Image(
+          image: AssetImage('lib/images/image_two.jpg'),
+        ),
+      );
+
+      
+
+  Widget _buildResources({
+    @required String title,
+    double itemHeight = 200,
+    @required int itemCount,
+    @required Widget Function(BuildContext, int) itemBuilder,
+    @required Widget Function(BuildContext, int) separatorBuilder,
+  }) =>
+      // Resources.
+      Expanded(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+            // Resources (title)
+            Padding(
+              padding: EdgeInsets.fromLTRB(24, 0, 24, 0),
+              child: Text(
+                title,
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            Divider(color: Colors.transparent),
+
+            // Resources (horizontal list).
+            Expanded(
+              child: Container(
+                height: itemHeight,
+                child: ListView.separated(
+                  itemCount: itemCount,
+                  scrollDirection: Axis.horizontal,
+                  separatorBuilder: separatorBuilder,
+                  itemBuilder: itemBuilder,
+                ),
+              ),
+            ),
+          ],
+        ),
+      );
+
   @override
   Widget build(BuildContext context) {
     final ClassTopic args = ModalRoute.of(context).settings.arguments;
@@ -106,40 +159,23 @@ class ClassTopicPage extends StatelessWidget {
                     Divider(color: Colors.transparent),
 
                     // Resources.
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: <Widget>[
-                          // Resources (title)
-                          Padding(
-                            padding: EdgeInsets.fromLTRB(24, 0, 24, 0),
-                            child: Text(
-                              "Recursos",
-                              style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
+                    _buildResources(
+                      title: "Recursos de clase",
+                      itemCount: args.resources.length,
+                      itemBuilder: _buildResource,
+                      separatorBuilder: _buildSeparator,
+                    ),
+                    
+                    Divider(color: Colors.transparent),
 
-                          Divider(color: Colors.transparent),
+                    // Resources.
+                    _buildResources(
+                      title: "Adjuntos",
+                      itemCount: args.attachments.length,
+                      itemBuilder: _buildAttachment,
+                      separatorBuilder: _buildSeparator,
+                    ),
 
-                          // Resources (horizontal list).
-                          Expanded(
-                            child: Container(
-                              height: 200,
-                              child: ListView.separated(
-                                itemCount: args.resources.length,
-                                scrollDirection: Axis.horizontal,
-                                separatorBuilder: _buildSeparator,
-                                itemBuilder: _buildResource,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    )
                   ],
                 ),
               ),
