@@ -33,6 +33,7 @@ class ClassTopicCard extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
+        constraints: BoxConstraints(maxWidth: 400),
         decoration: BoxDecoration(
           border: Border.all(color: Colors.grey),
           borderRadius: BorderRadius.circular(25),

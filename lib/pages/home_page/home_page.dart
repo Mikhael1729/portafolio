@@ -14,6 +14,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  bool _listMode;
 
   Widget Function(dynamic) _building(BuildContext context) =>
       (dynamic topic) => ClassTopicCard(
@@ -33,6 +34,12 @@ class _HomePageState extends State<HomePage> {
       ClassTopicPage.routeName,
       arguments: match,
     );
+  }
+
+  @override
+  void initState() { 
+    super.initState();
+    _listMode = true;
   }
 
   @override
@@ -66,13 +73,14 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
 
+        // Search bar.
         Padding(
           padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
           child: TextField(
             decoration: InputDecoration(
               filled: true,
-              hintStyle: new TextStyle(color: Colors.grey[800]),
-              hintText: "Type in your text",
+              hintStyle: TextStyle(color: Colors.grey[800]),
+              hintText: "Busca algo",
               fillColor: Colors.transparent,
               contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
               prefixIcon: Icon(Icons.search, color: Colors.grey),
@@ -96,6 +104,8 @@ class _HomePageState extends State<HomePage> {
         // Class list.
         Expanded(
           child: Container(
+            color: Colors.blue,
+            margin: EdgeInsets.fromLTRB(0, 20, 0, 20),
             child: Center(
               child: Carousel(items: points, buildItem: _building(context)),
             ),
