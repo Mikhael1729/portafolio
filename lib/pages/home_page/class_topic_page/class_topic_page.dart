@@ -4,7 +4,9 @@ import 'package:portafolio/components/header_image/header_image.dart';
 import 'package:portafolio/components/my_fade_transition.dart';
 import 'package:portafolio/models/resource.dart';
 import 'package:portafolio/models/class_topic.dart';
+import 'package:portafolio/models/resource_type.dart';
 import 'package:portafolio/pages/home_page/class_topic_page/image_resource/image_resource.dart';
+import 'package:portafolio/pages/home_page/class_topic_page/video_resource/video_resource.dart';
 
 class ClassTopicPage extends StatelessWidget {
   static const routeName = '/class-topic';
@@ -19,14 +21,28 @@ class ClassTopicPage extends StatelessWidget {
   Widget Function(BuildContext, int) _buildResource(List<Resource> resources) =>
       (context, index) {
         final resource = resources[index];
-        
-        return ImageResource(
-          children: <Widget>[
-            if(resource.name != null) Text(resource.name),
-            if(resource.description != null) Text(resource.description),
-          ],
-          imageUrl: "lib/images/image_two.jpg",
-        );
+
+        if (resource.type == ResourceType.localImage)
+          return ImageResource(
+            children: <Widget>[
+              if (resource.name != null) Text(resource.name),
+              if (resource.description != null) Text(resource.description),
+            ],
+            imageUrl: "lib/images/image_two.jpg",
+          );
+        else if (resource.type == ResourceType.externalVideo)
+          return VideoResource(
+            child: Center(
+              child: Text(
+                resource.name,
+                textAlign: TextAlign.center,
+              ),
+            ),
+            width: 150,
+            videoUrl: resource.url,
+          );
+        else
+          return Container(width: 0, height: 0);
       };
 
   // Build attachment.
