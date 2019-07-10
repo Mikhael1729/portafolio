@@ -63,37 +63,37 @@ class ClassTopicPage extends StatelessWidget {
   }) =>
       // Resources.
       Expanded(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            // Resources (title)
-            Padding(
-              padding: EdgeInsets.fromLTRB(24, 0, 24, 0),
-              child: Text(
+        child: Padding(
+          padding: EdgeInsets.fromLTRB(24, 0, 24, 0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              // Resources (title)
+              Text(
                 title,
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-            ),
 
-            Divider(color: Colors.transparent),
+              Divider(color: Colors.transparent),
 
-            // Resources (horizontal list).
-            Expanded(
-              child: Container(
-                height: itemHeight,
-                child: ListView.separated(
-                  itemCount: resources.length,
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: itemBuilder(resources),
-                  separatorBuilder: separatorBuilder,
+              // Resources (horizontal list).
+              Expanded(
+                child: Container(
+                  height: itemHeight,
+                  child: ListView.separated(
+                    itemCount: resources.length,
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: itemBuilder(resources),
+                    separatorBuilder: separatorBuilder,
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       );
 
