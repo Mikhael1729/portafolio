@@ -12,18 +12,21 @@ class HomePage extends StatelessWidget {
 
   Widget Function(dynamic) _building(BuildContext context) =>
       (dynamic topic) => ClassTopicCard(
-            onTap: () => _onTap(context),
+            onTap: () => _onTap(context, topic),
             classNumber: topic.id,
             content: topic.content,
             imageUrl: topic.coverImage,
             title: topic.title,
           );
 
-  void _onTap(BuildContext context) {
+  void _onTap(BuildContext context, ClassTopic topic) {
+    // Finding selected class topic.
+    final match = points.firstWhere((t) => t.id == topic.id);
+
     Navigator.pushNamed(
       context,
       ClassTopicPage.routeName,
-      arguments: points[0],
+      arguments: match,
     );
   }
 
