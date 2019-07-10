@@ -102,6 +102,14 @@ class ClassTopicPage extends StatelessWidget {
                       title: "Recursos de clase",
                       resources: args.resources,
                     ),
+
+                    Divider(color: Colors.transparent),
+                    
+                    // Attachments.
+                    ResourceList(
+                      title: "Evidencias",
+                      resources: args.attachments,
+                    ),
                   ],
                 ),
               ),

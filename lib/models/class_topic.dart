@@ -51,7 +51,7 @@ final points = [
         id: 2,
         name: "Bach busto",
         type: ResourceType.externalImage,
-        url: "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwiK37C6mqnjAhWt1FkKHfwsDKEQjRx6BAgBEAU&url=https%3A%2F%2Fes.wikipedia.org%2Fwiki%2FJohann_Sebastian_Bach&psig=AOvVaw23W5zMCreRr3hWLS_GeRq2&ust=1562808757512941"
+        url: "https://upload.wikimedia.org/wikipedia/commons/6/6a/Johann_Sebastian_Bach.jpg"
       ),
     ],
     resources: [
