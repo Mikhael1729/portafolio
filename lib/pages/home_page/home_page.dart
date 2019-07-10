@@ -122,17 +122,13 @@ class CarouselImplementation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        return Container(
-          height: 400,
-          width: constraints.maxWidth,
-          margin: EdgeInsets.fromLTRB(0, 20, 0, 20),
-          child: Center(
-            child: Carousel(items: points, buildItem: _building(context)),
-          ),
-        );
-      },
+    return Container(
+      height: 400,
+      width: double.infinity,
+      margin: EdgeInsets.fromLTRB(0, 20, 0, 20),
+      child: Center(
+        child: Carousel(items: points, buildItem: _building(context)),
+      ),
     );
   }
 }
