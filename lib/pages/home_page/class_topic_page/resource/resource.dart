@@ -26,28 +26,32 @@ class Resource extends StatelessWidget {
       child: Stack(
         alignment: Alignment.bottomLeft,
         children: <Widget>[
-          Image(
-            image: AssetImage(imageUrl),
-            fit: BoxFit.cover,
-          ),
+          // Image.
           Container(
-              width: double.infinity,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Container(
-                    width: double.infinity,
-                    color: color,
-                    child: Padding(
-                      padding: EdgeInsets.all(padding),
-                      child: Column(
-                        children: children,
-                      ),
+            width: double.infinity,
+            child: Image(image: AssetImage(imageUrl), fit: BoxFit.cover),
+          ),
+
+          // Content
+          Container(
+            width: double.infinity,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Container(
+                  width: double.infinity,
+                  color: color,
+                  child: Padding(
+                    padding: EdgeInsets.all(padding),
+                    child: Column(
+                      children: children,
                     ),
                   ),
-                ],
-              )),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );

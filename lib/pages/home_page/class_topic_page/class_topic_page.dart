@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portafolio/components/empty_app_bar/empty_app_bar.dart';
 import 'package:portafolio/components/header_image/header_image.dart';
 import 'package:portafolio/components/my_fade_transition.dart';
+import 'package:portafolio/models/resource.dart' as model;
 import 'package:portafolio/models/class_topic.dart';
 import 'package:portafolio/pages/home_page/class_topic_page/resource/resource.dart';
 
@@ -15,14 +16,14 @@ class ClassTopicPage extends StatelessWidget {
       Container(width: 10);
 
   // Build resource.
-  Widget _buildResource(BuildContext context, int index) {
-    return Resource(
-      children: <Widget>[
-        Text("Hello 1"),
-        Text("Hello 2"),
-      ],
-      imageUrl: "lib/images/image_two.jpg",
-    );
+  Widget Function(BuildContext, int) _buildResource(List<model.Resource> resources) {
+    return (context, index) => Resource(
+          children: <Widget>[
+            Text(resources[index].name),
+            Text("Hello 2"),
+          ],
+          imageUrl: "lib/images/image_two.jpg",
+        );
   }
 
   // Build attachment.
@@ -36,8 +37,8 @@ class ClassTopicPage extends StatelessWidget {
   Widget _buildResources({
     @required String title,
     double itemHeight = 200,
-    @required int itemCount,
-    @required Widget Function(BuildContext, int) itemBuilder,
+    @required List<model.Resource> resources,
+    @required Widget Function(BuildContext, int) Function(List<model.Resource>) itemBuilder,
     @required Widget Function(BuildContext, int) separatorBuilder,
   }) =>
       // Resources.
@@ -65,10 +66,10 @@ class ClassTopicPage extends StatelessWidget {
               child: Container(
                 height: itemHeight,
                 child: ListView.separated(
-                  itemCount: itemCount,
+                  itemCount: resources.length,
                   scrollDirection: Axis.horizontal,
+                  itemBuilder: itemBuilder(resources),
                   separatorBuilder: separatorBuilder,
-                  itemBuilder: itemBuilder,
                 ),
               ),
             ),
@@ -163,20 +164,13 @@ class ClassTopicPage extends StatelessWidget {
                     // Resources.
                     _buildResources(
                       title: "Recursos de clase",
-                      itemCount: args.resources.length,
                       itemBuilder: _buildResource,
+                      resources: args.resources,
                       separatorBuilder: _buildSeparator,
                     ),
 
                     Divider(color: Colors.transparent),
 
-                    // Resources.
-                    _buildResources(
-                      title: "Adjuntos",
-                      itemCount: args.attachments.length,
-                      itemBuilder: _buildAttachment,
-                      separatorBuilder: _buildSeparator,
-                    ),
                   ],
                 ),
               ),
