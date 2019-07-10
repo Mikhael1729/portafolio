@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portafolio/components/empty_app_bar/empty_app_bar.dart';
 import 'package:portafolio/models/layout_page.dart';
 
 class Layout extends StatefulWidget {
@@ -50,10 +51,3 @@ class _Layout extends State<Layout> {
   }
 }
 
-class EmptyAppBar extends StatelessWidget implements PreferredSizeWidget {
-  @override
-  Widget build(BuildContext context) => Container();
-
-  @override
-  Size get preferredSize => Size(0.0, 0.0);
-}

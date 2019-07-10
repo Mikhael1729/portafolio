@@ -42,12 +42,10 @@ class HomePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              MyFadeTransition(
-                child: Text(
-                  "Clases",
-                  style: TextStyle(
-                    fontSize: 36,
-                  ),
+              Text(
+                "Clases",
+                style: TextStyle(
+                  fontSize: 36,
                 ),
               ),
               Container(

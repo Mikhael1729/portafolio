@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:portafolio/components/empty_app_bar/empty_app_bar.dart';
+import 'package:portafolio/components/header_image/header_image.dart';
 import 'package:portafolio/components/my_fade_transition.dart';
-import 'package:portafolio/layouts/normal_page.dart';
 import 'package:portafolio/models/class_topic.dart';
 
 class ClassTopicPage extends StatelessWidget {
@@ -12,60 +13,93 @@ class ClassTopicPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final ClassTopic args = ModalRoute.of(context).settings.arguments;
 
-    return NormalPage(
-      title: Text("Clase ${args.id}"),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          // Title.
-          Padding(
-            padding: EdgeInsets.fromLTRB(20, 25, 20, 25),
-            child: MyFadeTransition(
+    return Scaffold(
+      resizeToAvoidBottomInset: false,
+      appBar: EmptyAppBar(),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            // Header
+            Stack(
+              alignment: Alignment.topLeft,
+              children: <Widget>[
+                HeaderImage(
+                    primaryText: args.title,
+                    secondaryText: "Clase ${args.id}",
+                    imageUrl: args.coverImage),
+                Positioned(
+                  top: 0.0,
+                  left: 0.0,
+                  child: Padding(
+                    padding: EdgeInsets.all(24),
+                    child: Container(
+                      width: 50,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(25),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Color(0x60000000),
+                            blurRadius:
+                                10, // has the effect of softening the shadow
+                            spreadRadius:
+                                10, // has the effect of extending the shadow
+                          ),
+                        ],
+                      ),
+                      child: MyFadeTransition(
+                        minimum: 0.7,
+                        child: FloatingActionButton(
+                          child: Icon(
+                            Icons.arrow_back,
+                            color: Colors.white,
+                          ),
+                          backgroundColor: Color(0xFF50567A),
+                          elevation: 10,
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+
+            // Content.
+            Padding(
+              padding: EdgeInsets.all(24),
+              child: Column(
+                children: <Widget>[
+                  Text(
+                    args.content,
+                    style: TextStyle(
+                      fontSize: 18,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            Divider(color: Colors.transparent),
+
+            // Recursos
+            Padding(
+              padding: EdgeInsets.fromLTRB(24, 0, 24, 0),
               child: Text(
-                args.title,
+                "Recursos",
                 style: TextStyle(
-                  fontSize: 26,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
             ),
-          ),
+          ],
 
-          Divider(height: 20, color: Colors.transparent),
-
-          // Content.
-          Padding(
-            padding: EdgeInsets.fromLTRB(25, 0, 20, 0),
-            child: Text(
-              args.content,
-              style: TextStyle(fontSize: 16),
-            ),
-          ),
-
-          Divider(height: 20, color: Colors.transparent),
-
-          // Anexos
-          Padding(
-            padding: EdgeInsets.fromLTRB(25, 0, 20, 0),
-            child: Text(
-              "Anexos",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
-          ),
-
-          Divider(height: 20, color: Colors.transparent),
-
-          Padding(
-            padding: EdgeInsets.fromLTRB(25, 0, 20, 0),
-            child: ConstrainedBox(
-              constraints:
-                  BoxConstraints(minWidth: double.infinity, maxHeight: 170),
-              child: Image(
-                image: AssetImage(args.coverImage),
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
-        ],
+          
+        ),
       ),
     );
   }

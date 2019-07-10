@@ -2,8 +2,14 @@ import 'package:flutter/cupertino.dart';
 
 class MyFadeTransition extends StatefulWidget {
   final Widget child;
+  final double minimum;
+  final double maximum;
 
-  MyFadeTransition({@required this.child});
+  MyFadeTransition({
+    @required this.child,
+    this.minimum = 0.4,
+    this.maximum = 1.0,
+  });
 
   @override
   State<StatefulWidget> createState() => _MyFadeTransition();
@@ -17,7 +23,7 @@ class _MyFadeTransition extends State<MyFadeTransition>
   @override
   void initState() {
     super.initState();
-    
+
     _controller = AnimationController(
       vsync: this,
       duration: Duration(seconds: 2),
@@ -32,9 +38,8 @@ class _MyFadeTransition extends State<MyFadeTransition>
     });
 
     _animation = Tween(
-      begin: 0.3,
-      end: 1.0,
-      
+      begin: widget.minimum,
+      end: widget.maximum,
     ).animate(_controller);
   }
 

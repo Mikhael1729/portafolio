@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portafolio/components/my_fade_transition.dart';
 
 class ClassTopicCard extends StatelessWidget {
   final int classNumber;
@@ -116,16 +117,19 @@ class ClassTopicCard extends StatelessWidget {
                   color: Colors.transparent,
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(20, 0, 24, 10),
-                    child: FlatButton.icon(
-                      onPressed: onTap,
-                      icon: Icon(
-                        Icons.info,
-                        color: Theme.of(context).accentColor,
-                      ),
-                      label: Text(
-                        "Leer más...",
-                        style: TextStyle(
+                    child: MyFadeTransition(
+                      minimum: 0.6,
+                      child: FlatButton.icon(
+                        onPressed: onTap,
+                        icon: Icon(
+                          Icons.info,
                           color: Theme.of(context).accentColor,
+                        ),
+                        label: Text(
+                          "Leer más...",
+                          style: TextStyle(
+                            color: Theme.of(context).accentColor,
+                          ),
                         ),
                       ),
                     ),
