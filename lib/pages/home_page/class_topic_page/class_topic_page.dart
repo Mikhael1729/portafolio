@@ -110,50 +110,46 @@ class ClassTopicPage extends StatelessWidget {
                     Divider(color: Colors.transparent),
 
                     // Resources.
-                    _subtitle("Recursos de clase"),
-
-                    Divider(color: Colors.transparent),
-
-                    ResourceList(resources: args.resources),
-
-                    Divider(color: Colors.transparent),
+                    if (args.resources != null) ...[
+                      _subtitle("Recursos de clase"),
+                      Divider(color: Colors.transparent),
+                      ResourceList(resources: args.resources),
+                      Divider(color: Colors.transparent)
+                    ],
 
                     // Attachments.
-                    _subtitle("Enlaces"),
-
-                    Divider(color: Colors.transparent),
-
-                    for (var url in args.urls)
-                      Padding(
-                        padding: EdgeInsets.fromLTRB(24, 0, 24, 0),
-                        child: FlatButton.icon(
-                          onPressed: () async {
-                            if(await canLaunch(url.url))
-                              await launch(url.url);
-                          },
-                          icon: Icon(
-                            Icons.link,
-                            color: Colors.blue,
-                          ),
-                          label: Text(
-                            url.title,
-                            style: TextStyle(
+                    if (args.urls != null) ...[
+                      _subtitle("Enlaces"),
+                      Divider(color: Colors.transparent),
+                      for (var url in args.urls)
+                        Padding(
+                          padding: EdgeInsets.fromLTRB(24, 0, 24, 0),
+                          child: FlatButton.icon(
+                            onPressed: () async {
+                              if (await canLaunch(url.url))
+                                await launch(url.url);
+                            },
+                            icon: Icon(
+                              Icons.link,
                               color: Colors.blue,
+                            ),
+                            label: Text(
+                              url.title,
+                              style: TextStyle(
+                                color: Colors.blue,
+                              ),
                             ),
                           ),
                         ),
-                      ),
+                      Divider(color: Colors.transparent),
+                    ],
 
-             
-                    Divider(color: Colors.transparent),
-
-                    _subtitle("Evidencias"),
-
-                    Divider(color: Colors.transparent),
-
-                    ResourceList(resources: args.attachments),
-
-                    Divider(color: Colors.transparent),
+                    if (args.attachments != null) ...[
+                      _subtitle("Evidencias"),
+                      Divider(color: Colors.transparent),
+                      ResourceList(resources: args.attachments),
+                      Divider(color: Colors.transparent),
+                    ]
                   ],
                 ),
               ),
