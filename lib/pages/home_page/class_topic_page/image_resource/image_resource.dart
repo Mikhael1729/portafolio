@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:portafolio/models/resource_type.dart';
 
 class ImageResource extends StatelessWidget {
   final String imageUrl;
