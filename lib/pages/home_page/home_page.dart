@@ -48,7 +48,7 @@ class _HomePageState extends State<HomePage> {
                     width: 40,
                     height: 40,
                     child: FloatingActionButton(
-                      child: Icon(_listMode ? Icons.list : Icons.library_books, color: Colors.white),
+                      child: Icon(_listMode ? Icons.library_books : Icons.list, color: Colors.white),
                       backgroundColor: Color(0xFF1D2030),
                       onPressed: () {
                         setState(() => _listMode = !_listMode);
