@@ -186,7 +186,7 @@ class ListViewImplementation extends StatelessWidget {
   void Function() _onTapItem(BuildContext context, ClassTopic topic) {
     return () {
       // Finding selected class topic.
-      final match = points.firstWhere((t) => t.id == topic.id);
+      final match = classTopics.firstWhere((t) => t.id == topic.id);
 
       Navigator.pushNamed(
         context,
@@ -198,10 +198,10 @@ class ListViewImplementation extends StatelessWidget {
 
   Widget _buildTopicClassItem(BuildContext context, int index) {
     return TopicClassItem(
-      classNumber: points[index].id,
-      description: points[index].content,
-      title: points[index].title,
-      onTap: _onTapItem(context, points[index]),
+      classNumber: classTopics[index].id,
+      description: classTopics[index].content,
+      title: classTopics[index].title,
+      onTap: _onTapItem(context, classTopics[index]),
     );
   }
 
@@ -210,7 +210,7 @@ class ListViewImplementation extends StatelessWidget {
     // TODO: implement build
     return ListView.separated(
       separatorBuilder: (context, index) => Divider(color: Colors.grey),
-      itemCount: points.length,
+      itemCount: classTopics.length,
       itemBuilder: _buildTopicClassItem,
     );
   }
@@ -228,7 +228,7 @@ class CarouselImplementation extends StatelessWidget {
 
   void _onTap(BuildContext context, ClassTopic topic) {
     // Finding selected class topic.
-    final match = points.firstWhere((t) => t.id == topic.id);
+    final match = classTopics.firstWhere((t) => t.id == topic.id);
 
     Navigator.pushNamed(
       context,
@@ -247,7 +247,7 @@ class CarouselImplementation extends StatelessWidget {
       width: double.infinity,
       margin: EdgeInsets.fromLTRB(0, 20, 0, 20),
       child: Center(
-        child: Carousel(items: points, buildItem: _building(context)),
+        child: Carousel(items: classTopics, buildItem: _building(context)),
       ),
     );
   }
