@@ -47,7 +47,7 @@ class ClassTopicPage extends StatelessWidget {
                         HeaderImage(
                           primaryText: args.title,
                           secondaryText: "Clase ${args.id}",
-                          imageUrl: args.coverImage,
+                          imageUrl: args.coverImageUrl,
                           lateralPadding: 20,
                         ),
 

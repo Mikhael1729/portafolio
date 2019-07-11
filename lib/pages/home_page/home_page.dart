@@ -221,7 +221,7 @@ class CarouselImplementation extends StatelessWidget {
             onTap: () => _onTap(context, topic),
             classNumber: topic.id,
             content: topic.content,
-            imageUrl: topic.coverImage,
+            imageUrl: topic.coverImageUrl,
             title: topic.title,
           );
 
