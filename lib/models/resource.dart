@@ -23,6 +23,6 @@ class Resource {
     @required this.name,
     this.description,
     this.url,
-    this.type,
+    this.type = ResourceType.externalImage,
   });
 }

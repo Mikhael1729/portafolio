@@ -35,6 +35,11 @@ final classTopics = <ClassTopic>[
         description: "Convertir de decimal a binario",
         type: ResourceType.externalImage,
         url: "https://thumbs.subefotos.com/8ac1f349de233799c396c5128add7d58o.jpg"
+      ),
+      Resource(
+        id: 3,
+        name: "Tabla de Código ASCII",
+        url: "https://thumbs.subefotos.com/3d2895aa2a0841893250aa151cad2db6o.jpg"
       )
     ],
     concepts: <Concept>[
@@ -43,5 +48,53 @@ final classTopics = <ClassTopic>[
         definition: "Es un diagrama utilizado para la simplificación de funciones algebraicas Booleanas. Fue creado por el físico-matemático Maurice Karnaugh"
       ),
     ],
-  )
+  ),
+
+  // Clase 3.
+  ClassTopic(
+    id: 3,
+    title: "Elementos básicos de la computadora",
+    content: "En la clase estuvimos viendo lo que fueron los conceptos de elementos básicos de la computadora,como la RAM, el CPU, Motherboard, etc.",
+    coverImageUrl: "https://images-na.ssl-images-amazon.com/images/I/616LsnKkw-L._SX425_.jpg",
+    attachments: [
+      Resource(
+        id: 4,
+        name: "CPU",
+        description: "Unidad Central de Procesamiento",
+        url: "https://www.extremetech.com/wp-content/uploads/2017/05/core-i9-640x353.jpg"
+      ),
+       Resource(
+        id: 5,
+        name: "RAM",
+        description: "Random Access Memory",
+        url: "https://images-na.ssl-images-amazon.com/images/I/61mlx7jlbVL._SX425_.jpg"
+      ),
+    ],
+    concepts: [
+      Concept(
+        name: "¿Qué es universitario?",
+        definition: "Ser universitario significa tener pasión por descubrir y conocer la verdad, tener sed por aprender y hambre de poder explicar el porqué de los fenómenos que observamos.",
+      ),
+      Concept(
+        name: "BIOS",
+        definition: "Es un sistema básico de entrada/salida Basic Input- Output System (BIOS) un código de interfaz que localiza y carga el sistema operativo en la RAM",
+      ),
+      Concept(
+        name: "Setup",
+        definition: "Es el software desde el cual, puedes cambiar los ajustes del BIOS.",
+      ),
+      Concept(
+        name: "RAM",
+        definition: "Random Access Memory",
+      ),
+      Concept(
+        name: "CPU",
+        definition: "Unidad Central de Procesamiento (Central Processing Unit en inglés)",
+      ),
+      Concept(
+        name: "Motherboard",
+        definition: "Es la tarjeta de circuito impreso a la que se conectan los componentes que constituyen la computadora.",
+      ),
+    ],
+  ),
 ];
