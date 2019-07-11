@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portafolio/models/layout_page.dart';
+import 'package:portafolio/pages/conclusions_page/conclusions_page.dart';
 import 'package:portafolio/pages/home_page/home_page.dart';
 import 'package:portafolio/pages/thoughts_page/thoughts_page.dart';
 
@@ -19,7 +20,7 @@ final pages = <LayoutPage>[
     page: ThoughtsPage(),
   ),
   LayoutPage(
-    barItem: _barItem("Herramientas", Icons.radio_button_checked),
-    page: Container(color: Colors.red),
+    barItem: _barItem("Conclusiones", Icons.radio_button_checked),
+    page: ConclusionsPage(),
   ),
 ];
