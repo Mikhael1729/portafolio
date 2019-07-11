@@ -4,6 +4,7 @@ import 'package:portafolio/models/layout_page.dart';
 
 class Layout extends StatefulWidget {
   final List<LayoutPage> pages;
+  static const routeName = '/classes';
 
   Layout({Key key, this.pages}) : super(key: key);
 

@@ -5,6 +5,6 @@ import 'layouts/layout.dart';
 
 final routes = {
   '/': (context) => WelcomePage(),
-  '/classes': (context) => Layout(pages: pages),
+  Layout.routeName: (context) => Layout(pages: pages),
   ClassTopicPage.routeName: (context) => ClassTopicPage(),
 };

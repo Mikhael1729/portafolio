@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portafolio/components/empty_app_bar/empty_app_bar.dart';
 import 'package:portafolio/pages/welcome_page/presentation/presentation.dart';
+import 'package:portafolio/pages/welcome_page/start/start.dart';
 
 import 'about_page/about_subject.dart';
 
@@ -46,7 +47,8 @@ class _WelcomePageState extends State<WelcomePage> {
     // Pages
     _pages = <Widget>[
       _scaffold(Presentation(nextPage: _nextPage)),
-      _scaffold(AboutPage(nextPage: _nextPage))
+      _scaffold(AboutPage(nextPage: _nextPage)),
+      _scaffold(Start()),
     ];
   }
 
