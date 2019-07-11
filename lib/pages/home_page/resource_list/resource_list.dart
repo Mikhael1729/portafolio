@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portafolio/models/resource.dart';
 import 'package:portafolio/models/resource_type.dart';
 import 'package:portafolio/pages/home_page/class_topic_page/image_resource/image_resource.dart';
-import 'package:portafolio/pages/home_page/class_topic_page/video_resource/video_resource.dart';
+import 'package:portafolio/pages/home_page/class_topic_page/other_resource/other_resource.dart';
 
 class ResourceList extends StatelessWidget {
   ResourceList({
