@@ -351,4 +351,19 @@ final classTopics = <ClassTopic>[
       ),
     ],
   ),
+
+  // Clase 9.
+  ClassTopic(
+    id: 9,
+    title: "Rúbricas para la entrega del \"portafolio\"",
+    content: "Este fue el último día de clases. De lo que se habló fue de los pasos y rúbricas que debemos seguir para terminar con la asignatura. Lo que queda es la entrega del proyecto que justo ahora estoy escribiendo y que probablemente el profesor esté leyendo esbozando una sonrisa. Si no, qué mal. :'(",
+    coverImageUrl: "https://www.dafont.com/img/illustration/t/h/the_last_day.png",
+
+    resources: [
+      Resource(
+        name: "Enunciado de la tarea final",
+        url: "https://thumbs.subefotos.com/cc203bfacad9d272edde6c9a3f4c575bo.jpg"
+      )
+    ]
+  )
 ];
