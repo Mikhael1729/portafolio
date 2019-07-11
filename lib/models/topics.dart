@@ -8,22 +8,30 @@ import 'concept.dart';
 final classTopics = <ClassTopic>[
   // Clase 1
   ClassTopic(
-    id: 1,
-    title: "Electronic Day",
-    content:
-        "Nuestro primer encuentro con el profesor fue en el evento ElectronicDayRD2K19. En éste se presentaron varias conferencias, talleres y charlas del área de tecnología electro-informática. El evento se celebró en el salón P. Julio Soto del Instituto Técnico Salesiano - ITESA en horario de 8:00am a  05:00pm ",
-    coverImageUrl:
-        "https://thumbs.subefotos.com/3b7e33bf122edab01ff92e0dd72adbbao.jpg",
-    resources: [
-      Resource(
-        id: 1,
-        name: "Fragmento de la tabla de actividades",
-        url:
-            "https://thumbs.subefotos.com/b093a15a311e61f07eb4ed88441c85bao.jpg",
-        type: ResourceType.externalImage,
-      ),
-    ],
-  ),
+      id: 1,
+      title: "Electronic Day",
+      content:
+          "Nuestro primer encuentro con el profesor fue en el evento ElectronicDayRD2K19. En éste se presentaron varias conferencias, talleres y charlas del área de tecnología electro-informática. El evento se celebró en el salón P. Julio Soto del Instituto Técnico Salesiano - ITESA en horario de 8:00am a  05:00pm ",
+      coverImageUrl:
+          "https://thumbs.subefotos.com/3b7e33bf122edab01ff92e0dd72adbbao.jpg",
+      resources: [
+        Resource(
+          id: 1,
+          name: "Fragmento de la tabla de actividades",
+          url:
+              "https://thumbs.subefotos.com/b093a15a311e61f07eb4ed88441c85bao.jpg",
+          type: ResourceType.externalImage,
+        ),
+      ],
+      attachments: [
+        Resource(
+            id: 2,
+            name: "Tarea 1",
+            description: "Convertir de decimal a binario",
+            type: ResourceType.externalImage,
+            url:
+                "https://thumbs.subefotos.com/8ac1f349de233799c396c5128add7d58o.jpg"),
+      ]),
 
   // Clase 2
   ClassTopic(
@@ -35,12 +43,19 @@ final classTopics = <ClassTopic>[
         "https://thumbs.subefotos.com/9997eee327fd1bc025f17970ec70eedco.jpg",
     attachments: <Resource>[
       Resource(
-          id: 2,
-          name: "Tarea 1",
-          description: "Convertir de decimal a binario",
-          type: ResourceType.externalImage,
-          url:
-              "https://thumbs.subefotos.com/8ac1f349de233799c396c5128add7d58o.jpg"),
+        name: "Semi-sumador",
+        description: "Aplicando álgebra booleana",
+        type: ResourceType.externalImage,
+        url:
+            "https://thumbs.subefotos.com/1fd413fd08b4befe14d33000da4ecd1co.jpg",
+      ),
+      Resource(
+        name: "Sumador completo",
+        description: "Aplicando álgebra booleana",
+        type: ResourceType.externalImage,
+        url:
+            "https://thumbs.subefotos.com/b5f158ffd8de932bc2075f0d54b2fd4eo.jpg",
+      ),
       Resource(
           id: 3,
           name: "Tabla de Código ASCII",
@@ -319,7 +334,8 @@ final classTopics = <ClassTopic>[
   ClassTopic(
     id: 8,
     title: "Dispositivos E/S",
-    coverImageUrl: "https://www.monografias.com/trabajos37/estructura-computador/Image8041.gif",
+    coverImageUrl:
+        "https://www.monografias.com/trabajos37/estructura-computador/Image8041.gif",
     content:
         "Este día se hizo principalmente la revisión de la tarea del juego o aplicación en bash y la exposición de los videos que hicimos de la tarea asignada, que en el caso de mi grupo escogimos los Dispositivos Entrada/Salida como tema para hacer el video",
     attachments: [
@@ -331,39 +347,38 @@ final classTopics = <ClassTopic>[
         type: ResourceType.other,
       ),
     ],
-
     urls: [
       UrlResource(
         title: "Programación en ensamblador (Asm86)",
         url: "https://asm86.wordpress.com/",
       ),
     ],
-
     concepts: [
       Concept(
         name: "Livewire",
-        definition: "Es una aplicación para hacer diagramas de muchos tipos. Entre esos están los diagramas para representar puertas lógicas.",
+        definition:
+            "Es una aplicación para hacer diagramas de muchos tipos. Entre esos están los diagramas para representar puertas lógicas.",
       ),
-
       Concept(
         name: "emu8086.",
-        definition: "Es un emulador de microprocesadores 8086. Es muy útil para cuando tienes que escribir código en ensamblador, ya que te permite crear, editar ejecutar programas en 8086.",
+        definition:
+            "Es un emulador de microprocesadores 8086. Es muy útil para cuando tienes que escribir código en ensamblador, ya que te permite crear, editar ejecutar programas en 8086.",
       ),
     ],
   ),
 
   // Clase 9.
   ClassTopic(
-    id: 9,
-    title: "Rúbricas para la entrega del \"portafolio\"",
-    content: "Este fue el último día de clases. De lo que se habló fue de los pasos y rúbricas que debemos seguir para terminar con la asignatura. Lo que queda es la entrega del proyecto que justo ahora estoy escribiendo y que probablemente el profesor esté leyendo esbozando una sonrisa. Si no, qué mal. :'(",
-    coverImageUrl: "https://www.dafont.com/img/illustration/t/h/the_last_day.png",
-
-    resources: [
-      Resource(
-        name: "Enunciado de la tarea final",
-        url: "https://thumbs.subefotos.com/cc203bfacad9d272edde6c9a3f4c575bo.jpg"
-      )
-    ]
-  )
+      id: 9,
+      title: "Rúbricas para la entrega del \"portafolio\"",
+      content:
+          "Este fue el último día de clases. De lo que se habló fue de los pasos y rúbricas que debemos seguir para terminar con la asignatura. Lo que queda es la entrega del proyecto que justo ahora estoy escribiendo y que probablemente el profesor esté leyendo esbozando una sonrisa. Si no, qué mal. :'(",
+      coverImageUrl:
+          "https://www.dafont.com/img/illustration/t/h/the_last_day.png",
+      resources: [
+        Resource(
+            name: "Enunciado de la tarea final",
+            url:
+                "https://thumbs.subefotos.com/cc203bfacad9d272edde6c9a3f4c575bo.jpg")
+      ])
 ];
