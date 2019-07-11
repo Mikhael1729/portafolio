@@ -5,6 +5,7 @@ import 'package:portafolio/models/url_resource.dart';
 
 class ClassTopic {
   final int id;
+  final int classNumber;
   final String title;
   final String content;
   final String coverImage;
@@ -16,6 +17,7 @@ class ClassTopic {
 
   ClassTopic({
     @required this.id,
+    this.classNumber,
     this.title,
     this.content,
     this.coverImage,
