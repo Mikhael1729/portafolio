@@ -21,11 +21,11 @@ final pages = <LayoutPage>[
     page: ThoughtsPage(),
   ),
   LayoutPage(
-    barItem: _barItem("Conclusiones", Icons.radio_button_checked),
-    page: ConclusionsPage(),
-  ),
-  LayoutPage(
     barItem: _barItem("Conversor", Icons.local_convenience_store),
     page: ConversionPage(),
+  ),
+  LayoutPage(
+    barItem: _barItem("Conclusiones", Icons.radio_button_checked),
+    page: ConclusionsPage(),
   ),
 ];
