@@ -6,6 +6,7 @@ class ClassTopicCard extends StatelessWidget {
   final String title;
   final String content;
   final String imageUrl;
+  final bool isExternalImage;
   final void Function() onTap;
 
   ClassTopicCard({
@@ -14,6 +15,7 @@ class ClassTopicCard extends StatelessWidget {
     this.content,
     this.imageUrl,
     this.onTap,
+    this.isExternalImage = true,
   });
 
   double computeMaxHeight(BuildContext context) {
@@ -61,10 +63,12 @@ class ClassTopicCard extends StatelessWidget {
                         topLeft: Radius.circular(24),
                         topRight: Radius.circular(24),
                       ),
-                      child: Image(
-                        image: AssetImage(imageUrl),
-                        fit: BoxFit.cover,
-                      ),
+                      child: isExternalImage 
+                        ? Image.network(imageUrl, fit: BoxFit.cover)
+                        : Image(
+                            image: AssetImage(imageUrl),
+                            fit: BoxFit.cover,
+                          ),
                     ),
                   ),
 
