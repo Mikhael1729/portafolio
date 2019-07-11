@@ -257,5 +257,62 @@ final classTopics = <ClassTopic>[
   ),
 
   // Clase 7.
-  
+  ClassTopic(
+    // 22/Jun/2019
+    id: 7, // REVISAR ESTO
+    title: "Programas en DOS",
+    content:
+        "En clase estuvimos viendo acerca de más comandos DOS y programación usando BASH. Entre lo comando se encuentran: sf, ipconfig, ping, msconfig, cleanmgr.exe, chkdsk, desk.cpl, net, necfg y muchos otros más",
+    coverImageUrl:
+        "https://adsecurity.org/wp-content/uploads/2016/02/PowerShell-Detection-Invoke-Expression.jpg", // FALTA
+    resources: [
+      Resource(
+        name: "Serie en Youtube ITCrowd",
+        description: "",
+        url:
+            "https://www.youtube.com/watch?v=buWS3Po8PRM&feature=youtu.be", // REVISAR ESTO
+        type: ResourceType.externalVideo,
+      ),
+      Resource(
+        name: "Pueblo blanco",
+        description: "Canción",
+        type: ResourceType.externalVideo,
+        url: "https://www.youtube.com/watch?v=2mqflL3bK5s",
+      ),
+    ],
+    attachments: [
+      Resource(
+        name: "Práctica en clase de bash",
+        description: "Aprendiendo navegación en BASH",
+        type: ResourceType.other,
+        url:
+            "https://drive.google.com/open?id=1aD7kixUzpRjWyBpmGqDOylnRs4Pfx_C6", // Está en G-Drive en la carpeta Attachments
+      ),
+      Resource(
+        name: "Tarea de juego o aplicación en BASH",
+        description: "(Archivo de Texto)",
+        type: ResourceType.other,
+        url:
+            "https://drive.google.com/open?id=0B0zNoW52exrEdWc1d1JTdUFfcy14SUltbDQteGh4TXpqM0FR", // Está en G-Drive en la carpeta Attachments
+      ),
+    ],
+    urls: [
+      // Enlaces personales acerca de la clase.
+      UrlResource(
+        id: 5,
+        title: "Conversión de binario a decimal (tarea)",
+        url:
+            "https://clasew.jimdo.com/app/download/6632237854/Omar+Trejos+Buritic%C3%A1+-+La+Esencia+de+la+Logica+de+Programaci%C3%B3n.pdf?t=1377395454",
+      ),
+
+      UrlResource(
+        id: 6,
+        title:
+            "New mind-reading machine can translate your thoughts ", // REVISAR
+        url:
+            "https://www.dailymail.co.uk/news/article-5565179/Mind-reading-machine-translate-thoughts-display-text.html",
+      ),
+    ],
+  ),
+
 ];

@@ -19,7 +19,7 @@ class Resource {
   }
 
   Resource({
-    @required this.id,
+    this.id,
     @required this.name,
     this.description,
     this.url,
