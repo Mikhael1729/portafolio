@@ -42,6 +42,7 @@ class _Layout extends State<Layout> {
           ],
         ),
         child: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
           onTap: _onTabTapped,
           currentIndex: _currentIndex,
           backgroundColor: Theme.of(context).backgroundColor,
