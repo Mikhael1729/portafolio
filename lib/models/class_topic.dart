@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart';
+import 'package:portafolio/models/concept.dart';
 import 'package:portafolio/models/resource.dart';
 import 'package:portafolio/models/resource_type.dart';
 import 'package:portafolio/models/url_resource.dart';
@@ -14,6 +15,7 @@ class ClassTopic {
       resources; // Videos, images or links of the teacher class.
   final List<Resource>
       attachments; // Your homeworks and other related things (your links)
+  final List<Concept> concepts;
 
   ClassTopic({
     @required this.id,
@@ -24,6 +26,7 @@ class ClassTopic {
     this.resources,
     this.attachments,
     this.urls,
+    this.concepts,
   });
 }
 
