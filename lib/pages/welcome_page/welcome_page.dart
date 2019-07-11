@@ -9,7 +9,7 @@ class WelcomePage extends StatefulWidget {
 
 class _WelcomePageState extends State<WelcomePage> {
   PageController _controller;
-  int _currentPage = 1;
+  int _currentPage = 0;
   final pages = <Widget>[
     Container(width: double.infinity, color: Colors.green),
     Container(width: double.infinity, color: Colors.red),
@@ -32,6 +32,7 @@ class _WelcomePageState extends State<WelcomePage> {
   @override
   Widget build(BuildContext context) {
     return PageView.builder(
+      itemCount: pages.length,
       controller: _controller,  
       onPageChanged: _onPageChanged,
       itemBuilder: _buildPage,
