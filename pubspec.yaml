@@ -47,6 +47,7 @@ flutter:
    - lib/images/image_one.jpg
    - lib/images/image_two.jpg
    - lib/images/binary_code.jpeg
+   - lib/images/portafolio.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
