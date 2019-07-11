@@ -4,6 +4,7 @@ class HeaderImage extends StatelessWidget {
   final String primaryText;
   final String secondaryText;
   final String imageUrl;
+  final bool isExternalImage;
   final double maxHeight;
   final double imageRadius;
   final double lateralPadding;
@@ -16,6 +17,7 @@ class HeaderImage extends StatelessWidget {
     this.imageUrl,
     this.imageRadius = 0,
     this.lateralPadding = 24,
+    this.isExternalImage = true,
   }) : super(key: key);
 
   @override
@@ -34,10 +36,12 @@ class HeaderImage extends StatelessWidget {
               topLeft: Radius.circular(imageRadius),
               topRight: Radius.circular(imageRadius),
             ),
-            child: Image(
-              image: AssetImage(imageUrl),
-              fit: BoxFit.cover,
-            ),
+            child: isExternalImage 
+              ? Image.network(imageUrl, fit: BoxFit.cover)
+              : Image(
+                  image: AssetImage(imageUrl),
+                  fit: BoxFit.cover,
+                ),
           ),
         ),
 
