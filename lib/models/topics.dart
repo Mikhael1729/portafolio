@@ -189,6 +189,16 @@ final classTopics = <ClassTopic>[
         type: ResourceType.other,
       ),
     ],
+    attachments: [
+      Resource(
+        id: 10,
+        name: "Reporte de lecutura selecta",
+        description: "Documento en PDF",
+        url:
+            "https://drive.google.com/open?id=0B0zNoW52exrEXzRIU2JlMXZHV0dyN1p2aGc5bjdFbkt5NXRN",
+        type: ResourceType.other,
+      ),
+    ],
     urls: [
       UrlResource(
         id: 1,
@@ -209,5 +219,43 @@ final classTopics = <ClassTopic>[
     ],
   ),
 
+  // Clase 6.
+  ClassTopic(
+    id: 6,
+    title: "Comandos de Windows, HDD, BAT",
+    content:
+        "En clase de laboratorio estuvimos analizando los discos duros por dentro y ponerlos a funcionar con un Power Suplay. También vimos sobre los tipos de memoria: éstas pueden ser volátiles, no volátiles o virtual",
+    coverImageUrl:
+        "https://sites.google.com/site/ejal4compu/_/rsrc/1472768908679/1-bimestre/home/dir.jpg",
+    resources: [
+      Resource(
+        id: 11,
+        name: "Rompiendo paradigmas",
+        description: "Video de YouTube",
+        url: "https://www.youtube.com/watch?v=N91tks1lY8E",
+        type: ResourceType.externalVideo,
+      ),
+    ],
+    attachments: [
+      Resource(
+        id: 12,
+        name: "Comandos de DOS",
+        description: "",
+        url:
+            "https://thumbs.subefotos.com/0a5fa395c5e2c6d5357d350be2223cado.jpg",
+      )
+    ],
+    urls: [
+      UrlResource(
+          title: "Para gestionar el Android", url: "http://droidjack.net")
+    ],
+    concepts: [
+      Concept(name: "Tipos de RAM", definition: "dinámica, estática,"),
+      Concept(
+          name: "Tipos de disco duro", definition: "plato, tarjeta control..."),
+    ],
+  ),
+
+  // Clase 7.
   
 ];
