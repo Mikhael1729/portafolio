@@ -41,7 +41,7 @@ final classTopics = <ClassTopic>[
       Concept(
         name: "Mapa de Karnaugh",
         definition: "Es un diagrama utilizado para la simplificación de funciones algebraicas Booleanas. Fue creado por el físico-matemático Maurice Karnaugh"
-      )
+      ),
     ],
   )
 ];

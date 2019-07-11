@@ -16,7 +16,7 @@ class ClassTopicPage extends StatelessWidget {
         child: Text(
           text,
           style: TextStyle(
-            fontSize: 20,
+            fontSize: 24,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -149,7 +149,38 @@ class ClassTopicPage extends StatelessWidget {
                       Divider(color: Colors.transparent),
                       ResourceList(resources: args.attachments),
                       Divider(color: Colors.transparent),
-                    ]
+                    ],
+
+                    if (args.concepts != null) ...[
+                      _subtitle("Conceptos"),
+                      Divider(color: Colors.transparent),
+                      for (var concept in args.concepts)
+                        Padding(
+                          padding: EdgeInsets.fromLTRB(24, 0, 24, 0),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              RichText(
+                                  text: TextSpan(
+                                      text: "- ${concept.name}: ",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 18),
+                                      children: [
+                                    TextSpan(
+                                      text: concept.definition,
+                                      style: TextStyle(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.normal),
+                                    ),
+                                  ])),
+                              Divider(color: Colors.transparent),
+                            ],
+                          ),
+                        ),
+                      Container(height: 20),
+                    ],
                   ],
                 ),
               ),
