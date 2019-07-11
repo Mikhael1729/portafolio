@@ -75,7 +75,7 @@ class Start extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Text("¡Empezemos!",
+                    Text("¡Empecemos!",
                         style:
                             TextStyle(color: Colors.lightBlue, fontSize: 16)),
                     Icon(

@@ -53,7 +53,7 @@ class AboutPage extends StatelessWidget {
 
             // My data.
             Text(
-                "Arquitectura del computador es la asignatura donde aprendemos los fundamentos de las computadoras, desde desarmar partes de los elementos básicos hasta ensamblador y uno que otros temas interesantes",
+                "Arquitectura del computador es la asignatura donde aprendemos los fundamentos de las computadoras, desde desarmar y probar partes de sus elementos básicos hasta ensamblador y uno que otros interesantes más.",
                 style: TextStyle(fontSize: 18,),textAlign: TextAlign.center,),
 
             Divider(
