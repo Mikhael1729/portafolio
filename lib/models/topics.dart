@@ -315,4 +315,40 @@ final classTopics = <ClassTopic>[
     ],
   ),
 
+  // Clase 8.
+  ClassTopic(
+    id: 8,
+    title: "Dispositivos E/S",
+    coverImageUrl: "https://www.monografias.com/trabajos37/estructura-computador/Image8041.gif",
+    content:
+        "Este día se hizo principalmente la revisión de la tarea del juego o aplicación en bash y la exposición de los videos que hicimos de la tarea asignada, que en el caso de mi grupo escogimos los Dispositivos Entrada/Salida como tema para hacer el video",
+    attachments: [
+      Resource(
+        name: "Herramientas para la clase",
+        description: "Tarea",
+        url:
+            "https://drive.google.com/open?id=0B0zNoW52exrELVhDV0xLbVlsVmdHSk1KUXNMS3d3Qjh1eko0",
+        type: ResourceType.other,
+      ),
+    ],
+
+    urls: [
+      UrlResource(
+        title: "Programación en ensamblador (Asm86)",
+        url: "https://asm86.wordpress.com/",
+      ),
+    ],
+
+    concepts: [
+      Concept(
+        name: "Livewire",
+        definition: "Es una aplicación para hacer diagramas de muchos tipos. Entre esos están los diagramas para representar puertas lógicas.",
+      ),
+
+      Concept(
+        name: "emu8086.",
+        definition: "Es un emulador de microprocesadores 8086. Es muy útil para cuando tienes que escribir código en ensamblador, ya que te permite crear, editar ejecutar programas en 8086.",
+      ),
+    ],
+  ),
 ];
