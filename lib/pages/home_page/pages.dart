@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portafolio/models/layout_page.dart';
 import 'package:portafolio/pages/home_page/home_page.dart';
+import 'package:portafolio/pages/thoughts_page/thoughts_page.dart';
 
 BottomNavigationBarItem _barItem(String text, IconData icon) =>
     BottomNavigationBarItem(
@@ -14,8 +15,8 @@ final pages = <LayoutPage>[
     page: HomePage(),
   ),
   LayoutPage(
-    barItem: _barItem("Herramientas", Icons.pan_tool),
-    page: Container(color: Colors.blue),
+    barItem: _barItem("Dudas", Icons.pan_tool),
+    page: ThoughtsPage(),
   ),
   LayoutPage(
     barItem: _barItem("Herramientas", Icons.radio_button_checked),
