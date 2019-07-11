@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    _listMode = true;
+    _listMode = false;
   }
 
   @override
