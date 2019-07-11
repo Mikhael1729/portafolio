@@ -27,7 +27,6 @@ class _ConversionPageState extends State<ConversionPage> {
 
   @override
   void dispose() {
-    // Clean up the controller when the widget is disposed.
     _unconvertedFieldController.dispose();
     super.dispose();
   }
