@@ -34,8 +34,9 @@ class ResourceList extends StatelessWidget {
             ],
             imageUrl: resource.url,
           );
-        else if (resource.type == ResourceType.externalVideo)
-          return VideoResource(
+        else
+          return OtherResource(
+            icon: resource.type == ResourceType.externalVideo ? Icons.videocam : Icons.data_usage,
             child: Center(
               child: Text(
                 resource.name,
@@ -43,13 +44,11 @@ class ResourceList extends StatelessWidget {
               ),
             ),
             width: 150,
-            videoUrl: resource.url,
+            url: resource.url,
           );
-        else
-          return Container(width: 0, height: 0);
       };
 
-  @override
+  @override 
   Widget build(BuildContext context) {
     return Expanded(
       child: Padding(

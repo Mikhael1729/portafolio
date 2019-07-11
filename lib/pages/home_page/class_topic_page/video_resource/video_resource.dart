@@ -2,23 +2,23 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class VideoResource extends StatelessWidget {
-    final Widget child;
+class OtherResource extends StatelessWidget {
+  final Widget child;
   final double height;
   final double padding;
-  final String videoUrl;
+  final String url;
   final double width;
+  final IconData icon;
 
-  VideoResource({
+  OtherResource({
     Key key,
-    @required this.videoUrl,
+    @required this.url,
     @required this.child,
+    @required this.icon,
     this.width = 300,
     this.height = 300,
     this.padding = 10,
   }) : super(key: key);
-
-
 
   Color _generateBackgroundColor() {
     final colors = [Colors.blue, Colors.yellow, Colors.red];
@@ -31,8 +31,8 @@ class VideoResource extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () async {
-        if(await canLaunch(videoUrl))
-          await launch(videoUrl);
+        if(await canLaunch(url))
+          await launch(url);
       },
       child: Container(
         width: width,
@@ -50,7 +50,7 @@ class VideoResource extends StatelessWidget {
                 children: [
                   // Icon.
                   Icon(
-                    Icons.videocam,
+                    icon,
                     size: 50,
                   ),
 
