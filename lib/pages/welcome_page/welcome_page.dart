@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:portafolio/components/empty_app_bar/empty_app_bar.dart';
 import 'package:portafolio/pages/welcome_page/presentation/presentation.dart';
 
+import 'about_page/about_subject.dart';
+
 class WelcomePage extends StatefulWidget {
   const WelcomePage({Key key}) : super(key: key);
 
@@ -34,13 +36,17 @@ class _WelcomePageState extends State<WelcomePage> {
   @override
   void initState() {
     super.initState();
+
+    // Controller
     _controller = PageController(
       initialPage: _currentPage,
       keepPage: false,
     );
+
+    // Pages
     _pages = <Widget>[
       _scaffold(Presentation(nextPage: _nextPage)),
-      Container(width: double.infinity, color: Colors.red),
+      _scaffold(AboutPage(nextPage: _nextPage))
     ];
   }
 
