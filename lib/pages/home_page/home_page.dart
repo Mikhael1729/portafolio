@@ -49,7 +49,8 @@ class _HomePageState extends State<HomePage> {
                     width: 40,
                     height: 40,
                     child: FloatingActionButton(
-                      child: Icon(_listMode ? Icons.library_books : Icons.list, color: Colors.white),
+                      child: Icon(_listMode ? Icons.library_books : Icons.list,
+                          color: Colors.white),
                       backgroundColor: Color(0xFF1D2030),
                       onPressed: () {
                         setState(() => _listMode = !_listMode);
@@ -92,15 +93,16 @@ class _HomePageState extends State<HomePage> {
           Divider(color: Colors.transparent),
 
           Expanded(
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(24, 0, 24, 0),
-              child: _listMode
-                  ? ListViewImplementation()
-                  : CarouselImplementation(),
-            ),
+            child: _listMode
+                ? Padding(
+                    padding: const EdgeInsets.fromLTRB(24, 0, 24, 0),
+                    child: ListViewImplementation(),
+                  )
+                : CarouselImplementation(),
           ),
 
-          Divider(color: Colors.transparent),
+          if(!_listMode)
+            Divider(color: Colors.transparent),
         ],
       ),
     );
