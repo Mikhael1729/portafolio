@@ -3,8 +3,8 @@ import 'package:portafolio/components/empty_app_bar/empty_app_bar.dart';
 import 'package:portafolio/components/header_image/header_image.dart';
 import 'package:portafolio/components/my_fade_transition.dart';
 import 'package:portafolio/models/class_topic.dart';
-import 'package:portafolio/pages/home_page/resource_list/resource_list.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'resource_list/resource_list.dart';
 
 class ClassTopicPage extends StatelessWidget {
   ClassTopicPage({Key key}) : super(key: key);
