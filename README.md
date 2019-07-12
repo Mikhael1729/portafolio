@@ -1,25 +1,15 @@
-# portafolio
+# Portafolio - Mikhael
 
-A new Flutter project.
+Aplicación móvil como "portafolio" (trabajo final) de la asignatura Arquitectura del Computador.
 
-## Getting Started
+Este proyecto cuenta con las secciones necesarias para cumplir con los requerimientos de esta tarea
 
-This project is a starting point for a Flutter application.
+- La **introducción**. Introduzco el trabajo.
 
-A few resources to get you started if this is your first Flutter project:
+- **Clases**. Es la sección donde se puede acceder a las clases que se impartieron durante el periodo de clases.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+- **Conclusiones**. Aquí expongo las conclusiones relacionadas con la asignatura.
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+- **Dudas**. Expongo las dudas que tuve en el periodo de clases y su solución.
 
-## Elements to add
-
-1. HomeScreen:
-  - Split between two diferent types of views: List and Cards.
-  - Use Transform() to lateral cards.
-  - Fix the problem with cards that up when TextFiel is focused.
-  - Escalar los cards dependiendo del tamaño de pantalla con MediaQuery y Transform.
-2. Pagination: Travel around the three different pages.
+Agregué un **conversor de sistemas de numeración** como sección extra a las requeridas.
