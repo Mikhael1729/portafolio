@@ -32,7 +32,7 @@ class _HomePageState extends State<HomePage> {
       // Search value.
       final searchValue = _transformText(keyword);
 
-      final text = _transformText(topic.title + " " + topic.content);
+      final text = _transformText("clase ${topic.id} ${topic.title} ${topic.content}");
 
       // There is a match?
       thereIsAMatch = text.contains(searchValue);
