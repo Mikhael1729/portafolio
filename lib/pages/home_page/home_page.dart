@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portafolio/components/my_fade_transition/my_fade_transition.dart';
+import 'package:portafolio/data/class_topics.dart';
+import 'package:portafolio/models/class_topic.dart';
 import 'class_topic_carousel/class_topic_carousel.dart';
 import 'class_topic_list/class_topic_list.dart';
 
@@ -14,11 +16,13 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   bool _listMode;
+  List<ClassTopic> _matches;
 
   @override
   void initState() {
     super.initState();
     _listMode = false;
+    _matches = classTopics;
   }
 
   @override
@@ -93,9 +97,9 @@ class _HomePageState extends State<HomePage> {
             child: _listMode
                 ? Padding(
                     padding: const EdgeInsets.fromLTRB(24, 0, 24, 0),
-                    child: ClasTopicList(),
+                    child: ClasTopicList(classTopics: _matches),
                   )
-                : ClassTopicCarousel(),
+                : ClassTopicCarousel(classTopics: _matches),
           ),
 
           if(!_listMode)

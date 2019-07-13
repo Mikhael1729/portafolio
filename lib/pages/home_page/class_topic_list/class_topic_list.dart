@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:portafolio/data/class_topics.dart';
 import 'package:portafolio/models/class_topic.dart';
 import 'package:portafolio/pages/home_page/class_topic_page/class_topic_page.dart';
 
 import 'class_topic_item/class_topic_item.dart';
 
 class ClasTopicList extends StatelessWidget {
+  final List<ClassTopic> classTopics;
+
+  ClasTopicList({Key key, @required this.classTopics});
+
   void Function() _onTapItem(BuildContext context, ClassTopic topic) {
     return () {
       // Finding selected class topic.

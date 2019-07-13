@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:portafolio/components/carousel/carousel.dart';
-import 'package:portafolio/data/class_topics.dart';
 import 'package:portafolio/models/class_topic.dart';
 import 'package:portafolio/pages/home_page/class_topic_card/class_topic_card.dart';
 import 'package:portafolio/pages/home_page/class_topic_page/class_topic_page.dart';
 
 class ClassTopicCarousel extends StatelessWidget {
+  final List<ClassTopic> classTopics;
+
+  ClassTopicCarousel({Key key, @required this.classTopics});
+
   Widget Function(dynamic) _building(BuildContext context) =>
       (dynamic topic) => ClassTopicCard(
             onTap: () => _onTap(context, topic),
