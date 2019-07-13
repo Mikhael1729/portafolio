@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:portafolio/models/image_and_type.dart';
+import 'package:portafolio/pages/expand_image/expand_image.dart';
 
 class ImageResource extends StatelessWidget {
   final String imageUrl;
@@ -9,7 +11,7 @@ class ImageResource extends StatelessWidget {
   final List<Widget> children;
   final bool externalImage;
 
-  const ImageResource({
+  ImageResource({
     Key key,
     @required this.imageUrl,
     @required this.children,
@@ -22,43 +24,57 @@ class ImageResource extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: width,
-      height: height,
-      child: Stack(
-        alignment: Alignment.bottomLeft,
-        children: <Widget>[
-          // Image.
-          Container(
-            alignment: Alignment.center,
-            width: double.infinity,
-            child: (!externalImage
-                ? Image(image: AssetImage(imageUrl), fit: BoxFit.cover)
-                : Image.network(imageUrl, fit: BoxFit.cover)),
-          ),
+    final image = !externalImage
+        ? Image(image: AssetImage(imageUrl), fit: BoxFit.cover)
+        : Image.network(imageUrl, fit: BoxFit.cover);
 
-          // Content
-          Container(
-            width: double.infinity,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Container(
-                  width: double.infinity,
-                  color: color,
-                  child: Padding(
-                    padding: EdgeInsets.all(padding),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: children,
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(
+          context,
+          ExpandImage.routeName,
+          arguments: new ImageUrlAndType(
+            imageUrl: imageUrl,
+            isExternal: externalImage,
+          ),
+        );
+      },
+      child: Container(
+        width: width,
+        height: height,
+        child: Stack(
+          alignment: Alignment.bottomLeft,
+          children: <Widget>[
+            // Image.
+            Container(
+              alignment: Alignment.center,
+              width: double.infinity,
+              child: image,
+            ),
+
+            // Content
+            Container(
+              width: double.infinity,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Container(
+                    width: double.infinity,
+                    color: color,
+                    child: Padding(
+                      padding: EdgeInsets.all(padding),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: children,
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
