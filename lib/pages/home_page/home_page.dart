@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portafolio/components/carousel/carousel.dart';
-import 'package:portafolio/components/my_fade_transition.dart';
+import 'package:portafolio/components/my_fade_transition/my_fade_transition.dart';
 import 'package:portafolio/data/class_topics.dart';
 import 'package:portafolio/models/class_topic.dart';
 import 'class_topic_card/class_topic_card.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portafolio/components/my_fade_transition.dart';
+import 'package:portafolio/components/my_fade_transition/my_fade_transition.dart';
 
 class AboutPage extends StatelessWidget {
   final void Function() nextPage;
