@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portafolio/components/my_fade_transition/my_fade_transition.dart';
-import 'package:portafolio/data/class_topics.dart';
-import 'package:portafolio/models/class_topic.dart';
 import 'class_topic_carousel/class_topic_carousel.dart';
 import 'class_topic_list/class_topic_list.dart';
-import 'class_topic_page/class_topic_page.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key, this.title}) : super(key: key);
