@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:portafolio/components/empty_app_bar/empty_app_bar.dart';
 import 'package:portafolio/models/layout_page.dart';
 
-class Layout extends StatefulWidget {
+class MainLayout extends StatefulWidget {
   final List<LayoutPage> pages;
   static const routeName = '/classes';
 
-  Layout({Key key, this.pages}) : super(key: key);
+  MainLayout({Key key, this.pages}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() => _Layout();
 }
 
-class _Layout extends State<Layout> {
+class _Layout extends State<MainLayout> {
   int _currentIndex = 0;
 
   void _onTabTapped(int index) {

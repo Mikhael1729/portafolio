@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portafolio/components/my_fade_transition/my_fade_transition.dart';
-import 'package:portafolio/layouts/layout.dart';
+import 'package:portafolio/layouts/main_layout/main_layout.dart';
 
 class Start extends StatelessWidget {
   const Start({Key key}) : super(key: key);
@@ -70,7 +70,7 @@ class Start extends StatelessWidget {
               child: MaterialButton(
                 onPressed: () => Navigator.pushNamed(
                       context,
-                      Layout.routeName,
+                      MainLayout.routeName,
                     ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
