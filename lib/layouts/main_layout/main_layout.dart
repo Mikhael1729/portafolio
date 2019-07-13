@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:portafolio/components/empty_app_bar/empty_app_bar.dart';
-import 'package:portafolio/models/layout_page.dart';
+import 'package:portafolio/layouts/main_layout/pages.dart';
 
-class Layout extends StatefulWidget {
-  final List<LayoutPage> pages;
+class MainLayout extends StatefulWidget {
   static const routeName = '/classes';
 
-  Layout({Key key, this.pages}) : super(key: key);
+  MainLayout({Key key}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() => _Layout();
 }
 
-class _Layout extends State<Layout> {
+class _Layout extends State<MainLayout> {
   int _currentIndex = 0;
 
   void _onTabTapped(int index) {
@@ -25,7 +24,7 @@ class _Layout extends State<Layout> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: EmptyAppBar(),
-      body: widget.pages[_currentIndex].page,
+      body: pages[_currentIndex].page,
       resizeToAvoidBottomInset: false,
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
@@ -46,7 +45,7 @@ class _Layout extends State<Layout> {
           onTap: _onTabTapped,
           currentIndex: _currentIndex,
           backgroundColor: Theme.of(context).backgroundColor,
-          items: widget.pages.map((page) => page.barItem).toList(),
+          items: pages.map((page) => page.barItem).toList(),
         ),
       ),
     );
