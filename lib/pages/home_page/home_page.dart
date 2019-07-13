@@ -17,12 +17,35 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   bool _listMode;
   List<ClassTopic> _matches;
+  final _searchBarController = new TextEditingController();
+
+  String _transformText(String text) => text.replaceAll(new RegExp(r'/[\u0300-\u036f]/g'), '').toLowerCase();
+
+  void _search(String keyword) {
+    final matches = classTopics.where((topic) {
+      // There is a result.
+      var thereIsAMatch = false;
+
+      // Search value.
+      final searchValue = _transformText(keyword);
+
+      final text = _transformText(topic.title + " " + topic.content);
+
+      // There is a match?
+      thereIsAMatch = text.contains(searchValue);
+
+      return thereIsAMatch;
+    });
+
+    setState(() => _matches = matches.toList());
+  }
 
   @override
   void initState() {
     super.initState();
     _listMode = false;
     _matches = classTopics;
+    _searchBarController.addListener(() => _search(_searchBarController.text));
   }
 
   @override
@@ -67,6 +90,8 @@ class _HomePageState extends State<HomePage> {
           Padding(
             padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
             child: TextField(
+              controller: _searchBarController,
+              onChanged: _search,
               decoration: InputDecoration(
                 filled: true,
                 hintStyle: TextStyle(color: Colors.grey[800]),
