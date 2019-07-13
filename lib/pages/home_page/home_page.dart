@@ -3,6 +3,7 @@ import 'package:portafolio/components/my_fade_transition/my_fade_transition.dart
 import 'package:portafolio/data/class_topics.dart';
 import 'package:portafolio/models/class_topic.dart';
 import 'class_topic_carousel/class_topic_carousel.dart';
+import 'class_topic_list/class_topic_list.dart';
 import 'class_topic_page/class_topic_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -95,7 +96,7 @@ class _HomePageState extends State<HomePage> {
             child: _listMode
                 ? Padding(
                     padding: const EdgeInsets.fromLTRB(24, 0, 24, 0),
-                    child: ListViewImplementation(),
+                    child: ClasTopicList(),
                   )
                 : ClassTopicCarousel(),
           ),
@@ -179,40 +180,6 @@ class TopicClassItem extends StatelessWidget {
           onPressed: onTap,
         )
       ],
-    );
-  }
-}
-
-class ListViewImplementation extends StatelessWidget {
-  void Function() _onTapItem(BuildContext context, ClassTopic topic) {
-    return () {
-      // Finding selected class topic.
-      final match = classTopics.firstWhere((t) => t.id == topic.id);
-
-      Navigator.pushNamed(
-        context,
-        ClassTopicPage.routeName,
-        arguments: match,
-      );
-    };
-  }
-
-  Widget _buildTopicClassItem(BuildContext context, int index) {
-    return TopicClassItem(
-      classNumber: classTopics[index].id,
-      description: classTopics[index].content,
-      title: classTopics[index].title,
-      onTap: _onTapItem(context, classTopics[index]),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return ListView.separated(
-      separatorBuilder: (context, index) => Divider(color: Colors.grey),
-      itemCount: classTopics.length,
-      itemBuilder: _buildTopicClassItem,
     );
   }
 }
