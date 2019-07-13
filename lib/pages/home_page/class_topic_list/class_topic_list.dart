@@ -3,7 +3,7 @@ import 'package:portafolio/data/class_topics.dart';
 import 'package:portafolio/models/class_topic.dart';
 import 'package:portafolio/pages/home_page/class_topic_page/class_topic_page.dart';
 
-import '../home_page.dart';
+import 'class_topic_item/class_topic_item.dart';
 
 class ClasTopicList extends StatelessWidget {
   void Function() _onTapItem(BuildContext context, ClassTopic topic) {
@@ -20,7 +20,7 @@ class ClasTopicList extends StatelessWidget {
   }
 
   Widget _buildTopicClassItem(BuildContext context, int index) {
-    return TopicClassItem(
+    return ClassTopicItem(
       classNumber: classTopics[index].id,
       description: classTopics[index].content,
       title: classTopics[index].title,
