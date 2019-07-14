@@ -117,26 +117,32 @@ class ClassTopicPage extends StatelessWidget {
                       Divider(color: Colors.transparent)
                     ],
 
-                    // Attachments.
+                    // Urls.
                     if (args.urls != null) ...[
                       _subtitle("Enlaces"),
                       Divider(color: Colors.transparent),
                       for (var url in args.urls)
                         Padding(
                           padding: EdgeInsets.fromLTRB(24, 0, 24, 0),
-                          child: FlatButton.icon(
-                            onPressed: () async {
-                              if (await canLaunch(url.url))
-                                await launch(url.url);
-                            },
-                            icon: Icon(
-                              Icons.link,
-                              color: Colors.blue,
-                            ),
-                            label: Text(
-                              url.title,
-                              style: TextStyle(
+                          child: Container(
+                            alignment: Alignment.centerLeft,
+                            child: FlatButton.icon(
+                              onPressed: () async {
+                                if (await canLaunch(url.url))
+                                  await launch(url.url);
+                              },
+                              icon: Icon(
+                                Icons.link,
                                 color: Colors.blue,
+                              ),
+                              label: Flexible( // You need to use Flexible to the well working of softWrap in Text.
+                                child: Text(
+                                  url.title,
+                                  softWrap: true,
+                                  style: TextStyle(
+                                    color: Colors.blue,
+                                  ),
+                                ),
                               ),
                             ),
                           ),
@@ -144,6 +150,7 @@ class ClassTopicPage extends StatelessWidget {
                       Divider(color: Colors.transparent),
                     ],
 
+                    // Attachments.
                     if (args.attachments != null) ...[
                       _subtitle("Evidencias"),
                       Divider(color: Colors.transparent),
@@ -151,6 +158,7 @@ class ClassTopicPage extends StatelessWidget {
                       Divider(color: Colors.transparent),
                     ],
 
+                    // Concepts.
                     if (args.concepts != null) ...[
                       _subtitle("Conceptos"),
                       Divider(color: Colors.transparent),
