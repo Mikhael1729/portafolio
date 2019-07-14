@@ -64,7 +64,7 @@ class ClassTopicPage extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(25),
                                 boxShadow: [
                                   BoxShadow(
-                                    color: Color(0x60000000),
+                                    color: Color(0x15000000),
                                     blurRadius:
                                         10, // has the effect of softening the shadow
                                     spreadRadius:
