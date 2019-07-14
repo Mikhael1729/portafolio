@@ -32,7 +32,8 @@ class _HomePageState extends State<HomePage> {
       // Search value.
       final searchValue = _transformText(keyword);
 
-      final text = _transformText("clase ${topic.id} ${topic.title} ${topic.content}");
+      final text =
+          _transformText("clase ${topic.id} ${topic.title} ${topic.content}");
 
       // There is a match?
       thereIsAMatch = text.contains(searchValue);
@@ -53,6 +54,8 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final orientation = MediaQuery.of(context).orientation;
+    
     return Container(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -127,7 +130,11 @@ class _HomePageState extends State<HomePage> {
                     padding: const EdgeInsets.fromLTRB(24, 0, 24, 0),
                     child: ClasTopicList(classTopics: _matches),
                   )
-                : ClassTopicCarousel(classTopics: _matches),
+                : orientation == Orientation.portrait
+                    ? ClassTopicCarousel(classTopics: _matches)
+                    : SingleChildScrollView(
+                        child: ClassTopicCarousel(classTopics: _matches),
+                      ),
           ),
 
           if (!_listMode)
