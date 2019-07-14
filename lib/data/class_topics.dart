@@ -18,7 +18,7 @@ final classTopics = <ClassTopic>[
           id: 1,
           name: "Fragmento de la tabla de actividades",
           url:
-              "https://thumbs.subefotos.com/b093a15a311e61f07eb4ed88441c85bao.jpg",
+              "https://fotos.subefotos.com/b093a15a311e61f07eb4ed88441c85bao.jpg",
           type: ResourceType.externalImage,
         ),
       ],
@@ -29,7 +29,7 @@ final classTopics = <ClassTopic>[
             description: "Convertir de decimal a binario",
             type: ResourceType.externalImage,
             url:
-                "https://thumbs.subefotos.com/8ac1f349de233799c396c5128add7d58o.jpg"),
+                "https://fotos.subefotos.com/8ac1f349de233799c396c5128add7d58o.jpg"),
       ]),
 
   // Clase 2
