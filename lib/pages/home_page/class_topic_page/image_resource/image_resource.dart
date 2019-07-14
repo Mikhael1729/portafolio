@@ -4,6 +4,7 @@ import 'package:portafolio/pages/expand_image/expand_image.dart';
 
 class ImageResource extends StatelessWidget {
   final String imageUrl;
+  final String title;
   final double width;
   final double height;
   final double padding;
@@ -16,6 +17,7 @@ class ImageResource extends StatelessWidget {
     @required this.imageUrl,
     @required this.children,
     @required this.externalImage,
+    this.title,
     this.color = const Color(0x90000000),
     this.width = 300,
     this.height = 300,
@@ -34,6 +36,7 @@ class ImageResource extends StatelessWidget {
           context,
           ExpandImage.routeName,
           arguments: new ImageUrlAndType(
+            title: title,
             imageUrl: imageUrl,
             isExternal: externalImage,
           ),

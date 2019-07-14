@@ -3,9 +3,14 @@ import 'package:flutter/material.dart';
 class ImageUrlAndType {
   final bool isExternal;
   final String imageUrl;
-  
-  ImageUrlAndType({this.isExternal, this.imageUrl});
- 
+  final String title;
+
+  ImageUrlAndType({
+    this.title,
+    this.isExternal,
+    @required this.imageUrl,
+  });
+
   Widget generate() {
     return Container(
       width: double.infinity,

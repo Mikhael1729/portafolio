@@ -26,6 +26,7 @@ class ResourceList extends StatelessWidget {
         if (resource.type == ResourceType.localImage ||
             resource.type == ResourceType.externalImage)
           return ImageResource(
+            title: resource.name,
             externalImage:
                 resource.type == ResourceType.localImage ? false : true,
             children: <Widget>[
