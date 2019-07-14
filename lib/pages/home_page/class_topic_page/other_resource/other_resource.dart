@@ -21,7 +21,14 @@ class OtherResource extends StatelessWidget {
   }) : super(key: key);
 
   Color _generateBackgroundColor() {
-    final colors = [Colors.blue, Colors.yellow, Colors.red];
+    final colors = [
+      Colors.blue,
+      Colors.green,
+      Colors.red,
+      Colors.black54,
+      Colors.blueGrey,
+      Colors.deepOrange
+    ];
     final randomIndex = new Random().nextInt(colors.length);
 
     return colors[randomIndex];
@@ -31,8 +38,7 @@ class OtherResource extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () async {
-        if(await canLaunch(url))
-          await launch(url);
+        if (await canLaunch(url)) await launch(url);
       },
       child: Container(
         width: width,

@@ -38,10 +38,13 @@ class ResourceList extends StatelessWidget {
         else
           return OtherResource(
             icon: resource.type == ResourceType.externalVideo ? Icons.videocam : Icons.data_usage,
-            child: Center(
-              child: Text(
-                resource.name,
-                textAlign: TextAlign.center,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Center(
+                child: Text(
+                  resource.name,
+                  textAlign: TextAlign.center,
+                ),
               ),
             ),
             width: 150,
