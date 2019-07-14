@@ -46,20 +46,20 @@ final classTopics = <ClassTopic>[
         description: "Aplicando álgebra booleana",
         type: ResourceType.externalImage,
         url:
-            "https://thumbs.subefotos.com/1fd413fd08b4befe14d33000da4ecd1co.jpg",
+            "https://fotos.subefotos.com/1fd413fd08b4befe14d33000da4ecd1co.jpg",
       ),
       Resource(
         name: "Sumador completo",
         description: "Aplicando álgebra booleana",
         type: ResourceType.externalImage,
         url:
-            "https://thumbs.subefotos.com/b5f158ffd8de932bc2075f0d54b2fd4eo.jpg",
+            "https://fotos.subefotos.com/b5f158ffd8de932bc2075f0d54b2fd4eo.jpg",
       ),
       Resource(
           id: 3,
           name: "Tabla de Código ASCII",
           url:
-              "https://thumbs.subefotos.com/3d2895aa2a0841893250aa151cad2db6o.jpg")
+              "https://fotos.subefotos.com/3d2895aa2a0841893250aa151cad2db6o.jpg")
     ],
     concepts: <Concept>[
       Concept(
@@ -97,7 +97,7 @@ final classTopics = <ClassTopic>[
         name: "Diferencias entre BIOS, CMOS y Setup",
         description: "Trabajo grupal de laboratorio",
         url:
-            "https://thumbs.subefotos.com/f872d7ccaeb2279556e7bc57a0cf9267o.jpg",
+            "https://fotos.subefotos.com/f872d7ccaeb2279556e7bc57a0cf9267o.jpg",
       ),
     ],
     concepts: [
@@ -163,7 +163,7 @@ final classTopics = <ClassTopic>[
         name: "Preguntas sobre la computadora",
         description: "Práctica de laboratorio",
         url:
-            "https://thumbs.subefotos.com/460a13816ea68ef01034e2406dfcf756o.jpg",
+            "https://fotos.subefotos.com/460a13816ea68ef01034e2406dfcf756o.jpg",
       ),
     ],
     concepts: [
@@ -256,7 +256,7 @@ final classTopics = <ClassTopic>[
         name: "Comandos de DOS",
         description: "",
         url:
-            "https://thumbs.subefotos.com/0a5fa395c5e2c6d5357d350be2223cado.jpg",
+            "https://fotos.subefotos.com/0a5fa395c5e2c6d5357d350be2223cado.jpg",
       )
     ],
     urls: [
@@ -378,7 +378,7 @@ final classTopics = <ClassTopic>[
       Resource(
           name: "Enunciado de la tarea final",
           url:
-              "https://thumbs.subefotos.com/cc203bfacad9d272edde6c9a3f4c575bo.jpg")
+              "https://fotos.subefotos.com/cc203bfacad9d272edde6c9a3f4c575bo.jpg")
     ],
     attachments: [
       Resource(
